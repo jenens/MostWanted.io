@@ -277,15 +277,17 @@ printAllToConsole(dataObject);
 */
 
 function initSearch(){
-	alert("Hello World");
+	// alert("Hello World");
 
 	// get all the information you need to run the search
-	var searchFirstName = prompt("Do you know the first name of who you are searching for? (yes or no)");
-	if (searchFirstName.toLowerCase() == "yes") {
-		followUpQuestion();
-	} else if (searchFirstName.toLowerCase == "no"){
+	var askForFirstName = prompt("Do you know the first name of the person you are searching for? (yes or no)");
+	if (askForFirstName.toLowerCase() == "yes") {
+		firstNameYes();
+	} 
 
-	}
+	// else if (askForFirstName.toLowerCase() == "no"){
+
+	// }
 
 
 
@@ -297,24 +299,32 @@ function initSearch(){
 	// responder(result);
 }
 
-function followUpQuestion(){
-	var searchLastName = prompt("Do you know their last name? (yes or no)")
-	if(searchLastName.toLowerCase() == "yes") {
-		followUpQuestion2();
+function firstNameYes(){
+	var searchFirstName = prompt("Please enter first name.")
+	if(searchFirstName.toLowerCase() == ["Billy", "Uma", "Michael"]) {
+		enterLastName();
 	}
-	else if(searchLastName.toLowerCase =="no") {
-		followUpQuestion2a()
-	}
+	// else if(searchLastName.toLowerCase() =="no") {
+	// 	firstNameNo()
+	// }
 
 }
 
-// function followUpQuestion2a() {
-// 	var 
-// }
+function firstNameNo() {
+	var searchLastName = prompt("Do you know their last name? (yes or no)")
+	if(searchLastName.toLowerCase() == "yes") {
+	
+	}
+	// else if(searchLastName.toLowerCase() =="no") {
+	// 	followUpQuestion2a()
+	// }
 
-function followUpQuestion2(){
-	var enterFirstName = prompt("Please enter first name.")
-	if (enterFirstName.toLowerCase == Billy) {
+
+}
+
+function enterLastName(){
+	var enterLastName = prompt("Do you know their last name?")
+	if (enterLastName.toLowerCase == ["Bob", "Walkens"]) {
 		getPersonInfo();
 	}
 }
