@@ -280,13 +280,32 @@ function initSearch(){
 	alert("Hello World");
 
 	// get all the information you need to run the search
-	var yourName = prompt("Who do you want to search for?");
+	var firstAnswer = prompt("Do you know who you want to search for?");
+		if (firstAnswer == "yes") {
+			 followUpQuestion();
+		}
+
 
 	// then pass that info to the respective function.
+
 	var result = getPersonInfo("J", "T")
 
 	// once the search is done, pass the results to the responder function
 	responder(result);
+}
+
+function followUpQuestion(){
+	var secondAnswer = prompt("Do you know their first name?")
+		if(secondAnswer == "yes") {
+			followUpQuestion2();
+		}
+}
+
+function followUpQuestion2(){
+	var thirdAnswer = prompt("Please enter first name.")
+		if (thirdAnswer == Billy) {
+			getPersonInfo();
+		}
 }
 
 function responder(results){
