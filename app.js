@@ -262,8 +262,8 @@ var dataObject = [
 		"occupation": "doctor",
 		"parents": [313207561,313997561],
 		"currentSpouse": null 
-	]
-};
+	}
+];
 
 /*  Remove this from your final submission
 function printAllToConsole(dataObj){
