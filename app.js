@@ -278,8 +278,6 @@ printAllToConsole(dataObject);
 
 function initSearch(){
 	// alert("Hello World");
-
-
 	var answer = " "; 
 	var firstName = " "; 
 	var lastName = " "; 
@@ -287,49 +285,42 @@ function initSearch(){
 	var characteristics = [ ];
 	var characteristic = "none";
 	while (!(answer=="yes" || answer=="no")){
-
 		answer=prompt("Do you know who you are looking for? (yes or no)."); 
-
-
 		}
-
 
 		if (answer == "yes"){
 			while (firstName==""){
-
-
 				firstName=prompt("What is their first name");
-
 			}
-
 			while (lastName==""){
 				lastName=prompt("What is their last name?");
-
-
 			}
-
 			while(!lookingFor=="1" || lookingFor=="2" || lookingFor=="3" || lookingFor=="4") {
 				lookingFor=prompt("Are you looknig for their information (1), family (2), decendants (3), or next of kin (4)? Please enter numbers 1-4.")
-
-
 			}
-
 		}
-
 		else{
-
 			while(characteristic!=""){
-				characteristic=prompt("Enter characteristic of person you are looking for. leave blank to begin searching...");
-				characteristic.push(characteristic);
+				characteristic=prompt("Enter characteristic of person you are looking for. Leave blank to begin searching...");
+				characteristics.push(characteristic);
 			}
-
-
 		}
-
 }
-
-		
-
+function getInfo (firstName, lastName){
+    var results = "";
+    responder(results);
+        }        
+        function getFamily(firstName, lastName){
+        }  
+        function getDescendants(firstName, lastName){
+        }        
+        function getKin(firstName, lastName){
+        }    
+        function filterPeople(characteristics){
+        }
+        function responder(results){
+            alert(results);
+        }
 
 
 
