@@ -1,5 +1,5 @@
-var dataObject = { 
-	"272822514" : { 
+var dataObject = [
+	 { 	"id": "272822514",
 		"firstName": "Billy",
 		"lastName": "Bob",
 		"gender": "male",
@@ -11,7 +11,7 @@ var dataObject = {
 		"parents": [],
 		"currentSpouse": 401222887 
 	},
-	"401222887" : { 
+		"id": "401222887"
 		"firstName": "Uma",
 		"lastName": "Bob",
 		"gender": "female",
@@ -23,7 +23,7 @@ var dataObject = {
 		"parents": [],
 		"currentSpouse": 272822514 
 	},
-	"409574486" : { 
+		"id": "409574486"	
 		"firstName": "Michael",
 		"lastName": "Walkens",
 		"gender": "male",
@@ -35,7 +35,7 @@ var dataObject = {
 		"parents": [],
 		"currentSpouse": 260451248 
 	},
-	"260451248" : {
+		"id": "260451248"	
 		"firstName": "Jon",
 		"lastName": "Walkens",
 		"gender": "male",
@@ -47,7 +47,7 @@ var dataObject = {
 		"parents": [],
 		"currentSpouse": 409574486 
 	},
-	"629807187" : {
+		"id": "629807187"
 		"firstName": "Jack",
 		"lastName": "Pafoy",
 		"gender": "male",
@@ -59,7 +59,7 @@ var dataObject = {
 		"parents": [],
 		"currentSpouse": 464142841 
 	},
-	"464142841" : {
+		"id": "464142841"
 		"firstName": "Jen",
 		"lastName": "Pafoy",
 		"gender": "female",
@@ -71,7 +71,7 @@ var dataObject = {
 		"parents": [],
 		"currentSpouse": 629807187 
 	},
-	"982411429" : {
+		"id": "982411429"
 		"firstName": "Mister",
 		"lastName": "Potatoo",
 		"gender": "male",
@@ -83,7 +83,7 @@ var dataObject = {
 		"parents": [],
 		"currentSpouse": 595767575 
 	},
-	"595767575" : {
+		"id": "595767575"
 		"firstName": "Missuz",
 		"lastName": "Potatoo",
 		"gender": "female",
@@ -95,7 +95,7 @@ var dataObject = {
 		"parents": [],
 		"currentSpouse": 982411429 
 	},
-	"693243224" : {
+		"id": "693243224"
 		"firstName": "Joy",
 		"lastName": "Madden",
 		"gender": "female",
@@ -107,7 +107,7 @@ var dataObject = {
 		"parents": [],
 		"currentSpouse": 693243224 
 	},
-	"888201200" : {
+		"id": "888201200"
 		"firstName": "Mader",
 		"lastName": "Madden",
 		"gender": "male",
@@ -119,7 +119,7 @@ var dataObject = {
 		"parents": [],
 		"currentSpouse": 888201200 
 	},
-	"878013758" : {
+		"id": "878013758"
 		"firstName": "Jill",
 		"lastName": "Pafoy",
 		"gender": "Bob",
@@ -131,7 +131,7 @@ var dataObject = {
 		"parents": [401222887,401222887],
 		"currentSpouse": 294874671 
 	},
-	"951747547" : {
+		"id": "951747547"
 		"firstName": "Ralph",
 		"lastName": "Bob",
 		"gender": "male",
@@ -143,7 +143,7 @@ var dataObject = {
 		"parents": [401222887,401222887],
 		"currentSpouse": 159819275 
 	},
-	"159819275" : {
+		"id": "159819275"
 		"firstName": "Jasmine",
 		"lastName": "Bob",
 		"gender": "female",
@@ -155,7 +155,7 @@ var dataObject = {
 		"parents": [409574486,260451248],
 		"currentSpouse": 951747547 
 	},
-	"348457184" : {
+		"id": "348457184"
 		"firstName": "Annie",
 		"lastName": "Pafoy",
 		"gender": "female",
@@ -167,7 +167,7 @@ var dataObject = {
 		"parents": [629807187,464142841],
 		"currentSpouse": null 
 	},
-	"294874671" : {
+		"id": "294874671"
 		"firstName": "Dave",
 		"lastName": "Pafoy",
 		"gender": "male",
@@ -179,7 +179,7 @@ var dataObject = {
 		"parents": [629807187,464142841],
 		"currentSpouse": 878013758 
 	},
-	"931247228" : {
+		"id": "931247228"
 		"firstName": "Amii",
 		"lastName": "Pafoy",
 		"gender": "female",
@@ -191,7 +191,7 @@ var dataObject = {
 		"parents": [629807187,464142841],
 		"currentSpouse": null 
 	},
-	"822843554" : {
+		"id": "822843554"
 		"firstName": "Regina",
 		"lastName": "Madden",
 		"gender": "female",
@@ -203,7 +203,7 @@ var dataObject = {
 		"parents": [693243224, 888201200],
 		"currentSpouse": null 
 	},
-	"819168108" : {
+		"id": "819168108"
 		"firstName": "Hana",
 		"lastName": "Madden",
 		"gender": "female",
@@ -215,7 +215,7 @@ var dataObject = {
 		"parents": [693243224, 888201200],
 		"currentSpouse": null 
 	},
-	"969837479" : {
+		"id": "969837479"
 		"firstName": "Eloise",
 		"lastName": "Madden",
 		"gender": "female",
@@ -227,7 +227,7 @@ var dataObject = {
 		"parents": [693243224, 888201200],
 		"currentSpouse": null 
 	},
-	"313207561" : {
+		"id": "313207561"
 		"firstName": "Mattias",
 		"lastName": "Madden",
 		"gender": "male",
@@ -239,7 +239,7 @@ var dataObject = {
 		"parents": [693243224, 888201200],
 		"currentSpouse": 313997561 
 	},
-	"313997561" : {
+		"id": "313997561"
 		"firstName": "Ellen",
 		"lastName": "Madden",
 		"gender": "female",
@@ -251,7 +251,7 @@ var dataObject = {
 		"parents": [],
 		"currentSpouse": 313207561 
 	},
-	"313998000" : {
+		"id": "313998000"
 		"firstName": "Joey",
 		"lastName": "Madden",
 		"gender": "female",
@@ -262,7 +262,7 @@ var dataObject = {
 		"occupation": "doctor",
 		"parents": [313207561,313997561],
 		"currentSpouse": null 
-	}
+	]
 };
 
 /*  Remove this from your final submission
@@ -296,7 +296,7 @@ function initSearch(){
 					lastName=prompt("What is their last name?");
 			}
 				while(!(lookingFor=="1" || lookingFor=="2" || lookingFor=="3" || lookingFor=="4")) {
-					lookingFor=prompt("Are you looknig for their information (1), family (2), decendants (3), or next of kin (4)? Please enter numbers 1-4.")
+					lookingFor=prompt("Are you looking for their information (1), family (2), decendants (3), or next of kin (4)? Please enter numbers 1-4.")
 			}
 		}
 		
