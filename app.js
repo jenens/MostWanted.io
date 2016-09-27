@@ -300,11 +300,20 @@ function initSearch(){
 			}
 		}
 		else{
-			while(characteristic!=""){
-				characteristic=prompt("Enter characteristic of person you are looking for. Leave blank to begin searching...");
-				characteristics.push(characteristic);
-			}
-		}
+        for (var i=0; i < 5; i++) {
+            while(characteristic == ""){
+
+                characteristic = prompt("Enter the characteristic of the person you are looking for");
+
+                //ask all 5 characteristics up front then filter it
+                //need switch case getFamily(firstName, lastName) getDescendants(firstName, lastName) getKin(firstName, LastName);
+                
+                //begin filtering characteristics
+            }
+            characteristics.push(characteristic);
+            characteristic = "";
+        }
+    }
 }
 function getInfo (firstName, lastName){
     var results = "";
