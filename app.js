@@ -279,70 +279,61 @@ printAllToConsole(dataObject);
 function initSearch(){
 	// alert("Hello World");
 
-	// get all the information you need to run the search
-	var askForFirstName = prompt("Do you know the first name of the person you are searching for? (yes or no)");
-	if (askForFirstName.toLowerCase() == "yes") {
-		firstNameYes();
-	} 
 
-	// else if (askForFirstName.toLowerCase() == "no"){
+	var answer = " "; 
+	var firstName = " "; 
+	var lastName = " "; 
+	var lookingFor = " "; 
+	var characteristics = [ ];
+	var characteristic = "none";
+	while (!(answer=="yes" || answer=="no")){
 
-	// }
+		answer=prompt("Do you know who you are looking for? (yes or no)."); 
 
 
+		}
 
-	// then pass that info to the respective function.
 
-	// var result = getPersonInfo("J", "T");
+		if (answer == "yes"){
+			while (firstName==""){
 
-	// once the search is done, pass the results to the responder function
-	// responder(result);
+
+				firstName=prompt("What is their first name");
+
+			}
+
+			while (lastName==""){
+				lastName=prompt("What is their last name?");
+
+
+			}
+
+			while(!lookingFor=="1" || lookingFor=="2" || lookingFor=="3" || lookingFor=="4") {
+				lookingFor=prompt("Are you looknig for their information (1), family (2), decendants (3), or next of kin (4)? Please enter numbers 1-4.")
+
+
+			}
+
+		}
+
+		else{
+
+			while(characteristic!=""){
+				characteristic=prompt("Enter characteristic of person you are looking for. leave blank to begin searching...");
+				characteristic.push(characteristic);
+			}
+
+
+		}
+
 }
 
-function firstNameYes(){
-	var searchFirstName = prompt("Please enter first name.")
-	if(searchFirstName.toLowerCase() == ["Billy", "Uma", "Michael"]) {
-		enterLastName();
-	}
-	// else if(searchLastName.toLowerCase() =="no") {
-	// 	firstNameNo()
-	// }
-
-}
-
-function firstNameNo() {
-	var searchLastName = prompt("Do you know their last name? (yes or no)")
-	if(searchLastName.toLowerCase() == "yes") {
-	
-	}
-	// else if(searchLastName.toLowerCase() =="no") {
-	// 	followUpQuestion2a()
-	// }
+		
 
 
-}
 
-function enterLastName(){
-	var enterLastName = prompt("Do you know their last name?")
-	if (enterLastName.toLowerCase == ["Bob", "Walkens"]) {
-		getPersonInfo();
-	}
-}
 
-function responder(results){
-	// results may be a list of strings, an object, or a single string. 
-	alert(results);
-}
 
-function getPersonInfo(firstname, lastname){
-	var result = "This will be the information for whoever you searched for";
-	// look up person's information
-	return result;
-}
-
-function getFamily(){
-	// return list of names of immediate family members
-}
 
 // there will be much more here, and some of the code above will certainly change
 
