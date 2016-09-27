@@ -278,43 +278,49 @@ printAllToConsole(dataObject);
 
 function initSearch(){
 	// alert("Hello World");
-	var answer = " "; 
-	var firstName = " "; 
-	var lastName = " "; 
-	var lookingFor = " "; 
+	var answer = ""; 
+	var firstName = ""; 
+	var lastName = ""; 
+	var lookingFor = ""; 
 	var characteristics = [ ];
 	var characteristic = "none";
 	while (!(answer=="yes" || answer=="no")){
 		answer=prompt("Do you know who you are looking for? (yes or no)."); 
 		}
 
-		if (answer == "yes"){
-			while (firstName==""){
-				firstName=prompt("What is their first name");
+			if (answer == "yes"){
+				while (firstName==""){
+					firstName=prompt("What is their first name");
 			}
-			while (lastName==""){
-				lastName=prompt("What is their last name?");
+				while (lastName==""){
+					lastName=prompt("What is their last name?");
 			}
-			while(!lookingFor=="1" || lookingFor=="2" || lookingFor=="3" || lookingFor=="4") {
-				lookingFor=prompt("Are you looknig for their information (1), family (2), decendants (3), or next of kin (4)? Please enter numbers 1-4.")
+				while(!(lookingFor=="1" || lookingFor=="2" || lookingFor=="3" || lookingFor=="4")) {
+					lookingFor=prompt("Are you looknig for their information (1), family (2), decendants (3), or next of kin (4)? Please enter numbers 1-4.")
 			}
 		}
+		
 		else{
-        for (var i=0; i < 5; i++) {
-            while(characteristic == ""){
+        	for (var i=0; i < 5; i++) {
+            	while(characteristic == ""){
 
-                characteristic = prompt("Enter the characteristic of the person you are looking for");
+                	characteristic = prompt("Enter the characteristic of the person you are looking for");
 
-                //ask all 5 characteristics up front then filter it
-                //need switch case getFamily(firstName, lastName) getDescendants(firstName, lastName) getKin(firstName, LastName);
+                	//ask all 5 characteristics up front then filter it
+                	//need switch case getFamily(firstName, lastName) getDescendants(firstName, lastName) getKin(firstName, LastName);
                 
-                //begin filtering characteristics
-            }
+                	//begin filtering characteristics
+            	}
+            
             characteristics.push(characteristic);
             characteristic = "";
-        }
-    }
+        	
+        	}
+    	}
+
+
 }
+
 function getInfo (firstName, lastName){
     var results = "";
     responder(results);
