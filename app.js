@@ -298,15 +298,17 @@ function initSearch() {
         while (!(lookingFor == "1" || lookingFor == "2" || lookingFor == "3" ||
             lookingFor == "4")) {
             lookingFor = prompt(
-                "Are you looking for their info (1), family (2), descendants (3), or next of kin (4). (Please type a number between 1-4)"
+                "Are you looking for their 1-info, 2-family, 3-descendants or 4-next of kin. (Please type a number between 1-4)"
             );
             //filter? can we use a for loop here with a filter?
         }
         switch (lookingFor) {
             case "1":
+
             case "2":
                 var familyResults = getFamily(firstName, lastName);
-                alert(familyResults[0]['firstName']);
+                var firstAndLastName = familyResults[0]['firstName'] + " " + familyResults[0]['lastName'];
+                alert (firstAndLastName);
                 break;
             case "3":
             case "4":
