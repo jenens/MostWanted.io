@@ -298,7 +298,7 @@ function initSearch() {
 		while (!(lookingFor == "1" || lookingFor == "2" || lookingFor == "3" ||
 			lookingFor == "4")) {
 			lookingFor = prompt(
-				"Are you looking for their 1-info, 2-family, 3-escendants, or 4-next of kin. (Please type a number between 1-4)"
+				"Are you looking for their 1-Info, 2-Family, 3-Descendants, or 4-Next of Kin (Please type a number between 1-4)?"
 				);
             //filter? can we use a for loop here with a filter?
         }
