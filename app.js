@@ -278,50 +278,64 @@ function printAllToConsole(dataObj){
 printAllToConsole(dataObject);
 */
 
-function initSearch(){
-	// alert("Hello World");
-	var answer = ""; 
-	var firstName = ""; 
-	var lastName = ""; 
-	var lookingFor = ""; 
-	var characteristics = [ ];
-	var characteristic = "none";
-	while (!(answer=="yes" || answer=="no")){
-		answer=prompt("Do you know who you are looking for? (yes or no)."); 
-		}
+function initSearch() {
+    var answer = "";
+    var firstName = "";
+    var lastName = "";
+    var lookingFor = "";
+    var characteristic = "";
+    var characteristics = [];
+    while (!(answer == "yes" || answer == "no")) {
+        answer = prompt("Do you know who you are looking for? (yes or no)");
+    }
+    if (answer == "yes") {
+        while (firstName == "") {
+            firstName = prompt("What's their first name?");
+        }
+        while (lastName == "") {
+            lastName = prompt("What's their last name?");
+        }
+        while (!(lookingFor == "1" || lookingFor == "2" || lookingFor == "3" ||
+            lookingFor == "4")) {
+            lookingFor = prompt(
+                "Are you looking for their info (1), family (2), descendants (3), or next of kin (4). (Please type a number between 1-4)"
+            );
+            //filter? can we use a for loop here with a filter?
+        }
+        switch (lookingFor) {
+            case "1":
+            case "2":
+                var familyResults = getFamily(firstName, lastName);
+                alert(familyResults[0]['firstName']);
+                break;
+            case "3":
+            case "4":
+        }
+    } else {
+        alert("Please come back when you have more information.");
+        return;
+    }
 
-			if (answer == "yes"){
-				while (firstName==""){
-					firstName=prompt("What is their first name");
-			}
-				while (lastName==""){
-					lastName=prompt("What is their last name?");
-			}
-				while(!(lookingFor=="1" || lookingFor=="2" || lookingFor=="3" || lookingFor=="4")) {
-					lookingFor=prompt("Are you looking for their information (1), family (2), decendants (3), or next of kin (4)? Please enter numbers 1-4.")
-			}
-		}
-		
-		else{
-        	for (var i=0; i < 5; i++) {
-            	while(characteristic == ""){
-
-                	characteristic = prompt("Enter the characteristic of the person you are looking for");
-
-                	//ask all 5 characteristics up front then filter it
-                	//need switch case getFamily(firstName, lastName) getDescendants(firstName, lastName) getKin(firstName, LastName);
-                
-                	//begin filtering characteristics
-            	}
-            
-            characteristics.push(characteristic);
-            characteristic = "";
-        	
-        	}
-    	}
-
-
+    function getFamily(firstName, lastName) {
+        return dataObject.filter(function(user) {
+            if (user.firstName == firstName && user.lastName == lastName) {
+                return (user);
+            }
+        });
+    }
+    for (var i = 0; i < 5; i++) {
+        while (characteristic == "") {
+            characteristic = prompt(
+                "Enter the characteristic of the person you are looking for");
+            //ask all 5 characteristics up front then filter it
+            //need switch case getFamily(firstName, lastName) getDescendants(firstName, lastName) getKin(firstName, LastName);
+            //begin filtering characteristics
+        }
+        characteristics.push(characteristic);
+        characteristic = "";
+    }
 }
+
 
 function getInfo (firstName, lastName){
     var results = "";
