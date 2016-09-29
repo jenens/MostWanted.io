@@ -317,7 +317,7 @@ function initSearch() {
         	break;
 
         	case "2":
-        	var idInfo = getId(firstName, lastName);
+        	var idInfo = getInformation(firstName, lastName);
         	var idResults ="ID: " + idInfo[0]['id'] + " First Name: " + idInfo[0]['firstName'] + " Last Name: " + idInfo[0]['lastName'];
         	alert(idResults);
         	break;
