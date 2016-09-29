@@ -288,6 +288,8 @@ function initSearch() {
 	var lookingFor = "";
 	var characteristic = "";
 	var characteristics = [];
+
+
 	while (!(answer == "yes" || answer == "no")) {
 		answer = prompt("Do you know who you are looking for? (yes or no)");
 	}
@@ -318,7 +320,21 @@ function initSearch() {
 
         	case "2":
         	var idInfo = getInformation(firstName, lastName);
-        	var idResults ="ID: " + idInfo[0]['id'] + " First Name: " + idInfo[0]['firstName'] + " Last Name: " + idInfo[0]['lastName'];
+
+        	var idResults ="ID: " + idInfo[0] ['id'];
+                for (var i = 0; i < dataObject.length; i++) {
+                console.log (dataObject[i]);
+
+            var idInfo = getInformation(firstName, lastName);
+            var idResults ="ID: " + idInfo[0]['id'] + " First Name: " + idInfo[0]['firstName'] + " Last Name: " + idInfo[0]['lastName'];
+           // alert(idResults);
+
+    if (idResults == dataObject[i]["id"]) {
+        alert (dataObject[i]["parents"]);
+    }
+
+}
+
         	alert(idResults);
         	break;
 
@@ -344,14 +360,6 @@ function initSearch() {
     			return (user);
     		}
     	});
-    }
-
-    function getId(firstName, lastName) {
-        return dataObject.filter(function(user) {
-            if (user.firstName == firstName && user.LastName == lastName) {
-                return (user);
-            }
-        });
 
     function getFamily(firstName, lastName) {
     	return dataObject.filter(function(user) {
