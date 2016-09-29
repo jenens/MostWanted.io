@@ -282,7 +282,10 @@ function initSearch() {
 	var answer = "";
 	var firstName = "";
 	var lastName = "";
+<<<<<<< HEAD
+=======
 	// var id = "";
+>>>>>>> 4cd186a64e48e96c9194326e21d2e8139d7d7d63
 	var lookingFor = "";
 	var characteristic = "";
 	var characteristics = [];
@@ -299,12 +302,11 @@ function initSearch() {
 		while (!(lookingFor == "1" || lookingFor == "2" || lookingFor == "3" ||
 			lookingFor == "4")) {
 			lookingFor = prompt(
-				"Are you looking for their 1-Info, 2-Descendants, 3-Family or 4-Next of Kin (Please type a number between 1-4)?"
+				"Are you looking for their 1-Info, 2-Family, 3-Descendants, or 4-Next of Kin (Please type a number between 1-4)?"
 				);
             //filter? can we use a for loop here with a filter?
         }
         switch (lookingFor) {
-        	
         	case "1":
         	var allOfTheInfo = getInformation(firstName, lastName);
         	var informationResults ="ID: " + allOfTheInfo[0]['id'] + " First Name: " + allOfTheInfo[0]['firstName'] + " Last Name: " + 
@@ -314,8 +316,6 @@ function initSearch() {
         	allOfTheInfo[0]['currentSpouse'];
         	alert(informationResults);
         	break;
-        	
-
         	case "2":
         	var decendantsInfo = getDecendants(firstName, lastName);
         	var decendantsResults ="ID: " + decendantsInfo[0]['id'] + " First Name: " + decendantsInfo[0]['firstName'] + " Last Name: " + 
@@ -332,13 +332,14 @@ function initSearch() {
         	case "3":
 
         	
-
         	case "4":
         }
     } else {
     	alert("Please come back when you have more information.");
     	return;
     }
+
+    
 
     function getInformation(firstName, lastName) {
     	return dataObject.filter(function(user) {
@@ -354,6 +355,8 @@ function initSearch() {
     			return (user);
     		}
     	});
+<<<<<<< HEAD
+=======
 
     	    }
 
@@ -363,6 +366,7 @@ function initSearch() {
     			return (user);
     		}
     	});
+>>>>>>> 4cd186a64e48e96c9194326e21d2e8139d7d7d63
     }
 
     for (var i = 0; i < 5; i++) {
