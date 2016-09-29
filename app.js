@@ -282,7 +282,7 @@ function initSearch() {
 	var answer = "";
 	var firstName = "";
 	var lastName = "";
-	var id = "";
+	// var id = "";
 	var lookingFor = "";
 	var characteristic = "";
 	var characteristics = [];
@@ -317,15 +317,16 @@ function initSearch() {
         	
 
         	case "2":
-        	var decendantsInfo = getDecendants(firstName, LastName);
-        	var decendantsResults = "First Name " + decendantsInfo[0]['firstName'] + "Last Name: " + decendantsInfo[0]['lastName'] "ID: " + decendantsInfo[0]["id"];
+        	var decendantsInfo = getDecendants(firstName, lastName);
+        	var decendantsResults ="ID: " + decendantsInfo[0]['id'] + " First Name: " + decendantsInfo[0]['firstName'] + " Last Name: " + 
+            decendantsInfo [0]['lastName'];
         	alert(decendantsResults);
         	break;
 
 
-        	// var familyResults = getFamily(firstName, lastName);
-        	// alert(familyResults[0]['firstName']);
-        	// break;
+        	var familyResults = getFamily(firstName, lastName);
+        	alert(familyResults[0]['firstName']);
+        	break;
         	
 
         	case "3":
@@ -357,12 +358,13 @@ function initSearch() {
     	    }
 
     function getDecendants(firstName, LastName) {
-    	return dataObject.filter(function(user) {
-    		if (user.firstName == firstName && user.LastName == lastName && user.id) {
-    			return (user);
+    	return dataObject.filter(function(user2) {
+    		if (user2.firstName == firstName && user2.LastName == lastName) {
+    			return (user2);
     		}
     	});
     }
+
     for (var i = 0; i < 5; i++) {
     	while (characteristic == "") {
     		characteristic = prompt(
@@ -384,6 +386,8 @@ function getInfo (firstName, lastName){
 function getFamily(firstName, lastName){
 }  
 function getDescendants(firstName, lastName){
+    var results = "";
+    responder(results);
 }        
 function getKin(firstName, lastName){
 }    
