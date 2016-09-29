@@ -282,6 +282,10 @@ function initSearch() {
 	var answer = "";
 	var firstName = "";
 	var lastName = "";
+<<<<<<< HEAD
+=======
+	// var id = "";
+>>>>>>> 4cd186a64e48e96c9194326e21d2e8139d7d7d63
 	var lookingFor = "";
 	var characteristic = "";
 	var characteristics = [];
@@ -313,10 +317,21 @@ function initSearch() {
         	alert(informationResults);
         	break;
         	case "2":
+        	var decendantsInfo = getDecendants(firstName, lastName);
+        	var decendantsResults ="ID: " + decendantsInfo[0]['id'] + " First Name: " + decendantsInfo[0]['firstName'] + " Last Name: " + 
+            decendantsInfo [0]['lastName'];
+        	alert(decendantsResults);
+        	break;
+
+
         	var familyResults = getFamily(firstName, lastName);
         	alert(familyResults[0]['firstName']);
         	break;
-        	case "3": 
+        	
+
+        	case "3":
+
+        	
         	case "4":
         }
     } else {
@@ -340,7 +355,20 @@ function initSearch() {
     			return (user);
     		}
     	});
+<<<<<<< HEAD
+=======
+
+    	    }
+
+    function getDecendants(firstName, LastName) {
+    	return dataObject.filter(function(user2) {
+    		if (user2.firstName == firstName && user2.LastName == lastName) {
+    			return (user2);
+    		}
+    	});
+>>>>>>> 4cd186a64e48e96c9194326e21d2e8139d7d7d63
     }
+
     for (var i = 0; i < 5; i++) {
     	while (characteristic == "") {
     		characteristic = prompt(
@@ -362,6 +390,8 @@ function getInfo (firstName, lastName){
 function getFamily(firstName, lastName){
 }  
 function getDescendants(firstName, lastName){
+    var results = "";
+    responder(results);
 }        
 function getKin(firstName, lastName){
 }    
