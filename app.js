@@ -316,6 +316,7 @@ function initSearch() {
         	allOfTheInfo[0]['currentSpouse'];
         	alert(informationResults);
         	break;
+
         	case "2":
         	var decendantsInfo = getDecendants(firstName, lastName);
         	var decendantsResults ="ID: " + decendantsInfo[0]['id'] + " First Name: " + decendantsInfo[0]['firstName'] + " Last Name: " + 
@@ -355,8 +356,6 @@ function initSearch() {
     			return (user);
     		}
     	});
-<<<<<<< HEAD
-=======
 
     	    }
 
@@ -366,7 +365,7 @@ function initSearch() {
     			return (user);
     		}
     	});
->>>>>>> 4cd186a64e48e96c9194326e21d2e8139d7d7d63
+
     }
 
     for (var i = 0; i < 5; i++) {
