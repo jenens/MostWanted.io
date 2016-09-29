@@ -321,22 +321,27 @@ function initSearch() {
         	case "2":
         	var idInfo = getInformation(firstName, lastName);
 
-        	var idResults ="ID: " + idInfo[0] ['id'];
+        	var idResults = idInfo[0] ['id'];
+               
+
                 for (var i = 0; i < dataObject.length; i++) {
-                console.log (dataObject[i]);
+                    console.log (dataObject[i]);
+                   // alert(idResults);
 
-            var idInfo = getInformation(firstName, lastName);
-            var idResults ="ID: " + idInfo[0]['id'] + " First Name: " + idInfo[0]['firstName'] + " Last Name: " + idInfo[0]['lastName'];
-           // alert(idResults);
+                    if (idResults == dataObject[i]["parents"]) {
+                        alert (dataObject[i]["id"]);
+                        }
 
-    if (idResults == dataObject[i]["id"]) {
-        alert (dataObject[i]["parents"]);
-    }
+                    //LEFT OFF HERE, TRYING TO FIGURE OUT HOW TO COMPARE idResults (which is a number) to parents (which is an array) within the
+                    // if statement directly above. Need to somehow access the array "parents" to pull out those numbers. May the odds be ever in your favor.
 
-}
+                }
+                alert ("No descendants found.");
 
-        	alert(idResults);
-        	break;
+
+                    
+        	// alert(idResults);
+        	
 
 
         	// var familyResults = getFamily(firstName, lastName);
