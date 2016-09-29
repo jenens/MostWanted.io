@@ -324,9 +324,9 @@ function initSearch() {
         	break;
 
 
-        	var familyResults = getFamily(firstName, lastName);
-        	alert(familyResults[0]['firstName']);
-        	break;
+        	// var familyResults = getFamily(firstName, lastName);
+        	// alert(familyResults[0]['firstName']);
+        	// break;
         	
 
         	case "3":
@@ -358,9 +358,9 @@ function initSearch() {
     	    }
 
     function getDecendants(firstName, LastName) {
-    	return dataObject.filter(function(user2) {
-    		if (user2.firstName == firstName && user2.LastName == lastName) {
-    			return (user2);
+    	return dataObject.filter(function(user) {
+    		if (user.firstName == firstName && user.LastName == lastName) {
+    			return (user);
     		}
     	});
     }
@@ -379,23 +379,23 @@ function initSearch() {
 }
 
 
-function getInfo (firstName, lastName){
-	var results = "";
-	responder(results);
-}        
-function getFamily(firstName, lastName){
-}  
-function getDescendants(firstName, lastName){
-    var results = "";
-    responder(results);
-}        
-function getKin(firstName, lastName){
-}    
-function filterPeople(characteristics){
-}
-function responder(results){
-	alert(results);
-}
+// function getInfo (firstName, lastName){
+// 	var results = "";
+// 	responder(results);
+// }        
+// function getFamily(firstName, lastName){
+// }  
+// function getDescendants(firstName, lastName){
+//     var results = "";
+//     responder(results);
+// }        
+// function getKin(firstName, lastName){
+// }    
+// function filterPeople(characteristics){
+// }
+// function responder(results){
+// 	alert(results);
+// }
 
 
 
