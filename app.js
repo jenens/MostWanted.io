@@ -282,10 +282,9 @@ function initSearch() {
 	var answer = "";
 	var firstName = "";
 	var lastName = "";
-<<<<<<< HEAD
-=======
+
 	// var id = "";
->>>>>>> 4cd186a64e48e96c9194326e21d2e8139d7d7d63
+
 	var lookingFor = "";
 	var characteristic = "";
 	var characteristics = [];
@@ -302,7 +301,7 @@ function initSearch() {
 		while (!(lookingFor == "1" || lookingFor == "2" || lookingFor == "3" ||
 			lookingFor == "4")) {
 			lookingFor = prompt(
-				"Are you looking for their 1-Info, 2-Family, 3-Descendants, or 4-Next of Kin (Please type a number between 1-4)?"
+				"Are you looking for their 1-Info, 2-Descendants, 3-Family, or 4-Next of Kin (Please type a number between 1-4)?"
 				);
             //filter? can we use a for loop here with a filter?
         }
@@ -318,10 +317,9 @@ function initSearch() {
         	break;
 
         	case "2":
-        	var decendantsInfo = getDecendants(firstName, lastName);
-        	var decendantsResults ="ID: " + decendantsInfo[0]['id'] + " First Name: " + decendantsInfo[0]['firstName'] + " Last Name: " + 
-            decendantsInfo [0]['lastName'];
-        	alert(decendantsResults);
+        	var idInfo = getId(firstName, lastName);
+        	var idResults ="ID: " + idInfo[0]['id'] + " First Name: " + idInfo[0]['firstName'] + " Last Name: " + idInfo[0]['lastName'];
+        	alert(idResults);
         	break;
 
 
@@ -340,8 +338,6 @@ function initSearch() {
     	return;
     }
 
-    
-
     function getInformation(firstName, lastName) {
     	return dataObject.filter(function(user) {
     		if (user.firstName == firstName && user.lastName == lastName) {
@@ -349,6 +345,13 @@ function initSearch() {
     		}
     	});
     }
+
+    function getId(firstName, lastName) {
+        return dataObject.filter(function(user) {
+            if (user.firstName == firstName && user.LastName == lastName) {
+                return (user);
+            }
+        });
 
     function getFamily(firstName, lastName) {
     	return dataObject.filter(function(user) {
@@ -358,13 +361,6 @@ function initSearch() {
     	});
 
     	    }
-
-    function getDecendants(firstName, LastName) {
-    	return dataObject.filter(function(user) {
-    		if (user.firstName == firstName && user.LastName == lastName) {
-    			return (user);
-    		}
-    	});
 
     }
 
