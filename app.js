@@ -328,8 +328,12 @@ function initSearch() {
                     console.log (dataObject[i]);
                    // alert(idResults);
 
-                    if (idResults == dataObject[i]["parents"]) {
-                        alert (dataObject[i]["id"]);
+                    var idIntoANumber = parseInt(idResults, 10);
+                    var firstParentId = dataObject[i].parents[0];
+                    var secondParentId = dataObject[i].parents[1];
+
+                    if (idIntoANumber === firstParentId || idIntoANumber === secondParentId) {
+                        alert (dataObject[i].firstName + " " + dataObject[i].lastName);
                         }
 
                     //LEFT OFF HERE, TRYING TO FIGURE OUT HOW TO COMPARE idResults (which is a number) to parents (which is an array) within the
