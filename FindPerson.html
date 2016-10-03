@@ -19,7 +19,10 @@
       <!--   <a id="logo-container" href="#" class="brand-logo"></a> -->
       <ul class="right hide-on-med-and-down">
         <li>
-          <a href="FindPerson.html">Find Person</a>
+          <a href="index.html">HOME</a>
+        </li>
+        <li>
+          <a href="wanted.html">Find a Person</a>
         </li>
         <li>
           <a href="#">Find Decendnats</a>
@@ -75,7 +78,7 @@
       </ul>
       <ul class="side-nav" id="nav-mobile">
         <li>
-          <a href="FindPerson.html">Find Person</a>
+          <a href="#">Find a Person</a>
         </li>
         <li>
           <a href="#">Find Decendants</a>
@@ -83,36 +86,61 @@
         <li>
           <a href="#">Find Immediate Family</a>
         </li>
+        <li>
+          <a href="#">Find Next Of Kin</a>
+        </li>
       </ul><a class="button-collapse" data-activates="nav-mobile" href=
       "#"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-  <div class="parallax-container" id="index-banner">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br>
-        <br>
-        <h1 class="header center teal-text text-lighten-2">Most Wanted</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">This is a database to find people.</h5>
-        </div><!--  <div class="row center">
-          <a href="FindPerson.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Start Searching</a>
-        </div> -->
-        <br>
-        <br>
-      </div>
+  <div class="col s12 m4">
+    <div class="icon-block">
+      <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+      <h5 class="center">Find a person</h5>
+      <p class="light"></p>
+      <center>
+        If you know the first and last name of the person you are looking and if
+        they are in you will see all of their info displayed if that person is in
+        our database.
+        <center>
+          <p></p>
+          <form action="action_page.php">
+            <label for="fname">First Name</label><br>
+            <input id="fname" name="firstname" type="text"><br>
+            <label for="lname">Last Name</label><br>
+            <input id="lname" name="lastname" type="text"><br>
+            <!-- 
+    <label for="country">State</label>
+    <input type="text" id="lname" name="lastname"> -->
+             <!--    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+   -->
+             <input type="submit" value="SUBMIT">
+          </form>
+        </center>
+      </center>
     </div>
-    <div class="parallax"><img alt="crime scene image" src=
-    "img/crime_scene.jpg"></div>
-  </div>
-  <div class="container">
-    <div class="section"></div>
-    <div class="container">
-      <div class="section">
-        <div class="row">
-          <div class="col s12 center">
-            <h3><i class="mdi-content-send brown-text"></i></h3>
+  </div><!--         <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
           </div>
+        </div>
+      </div>
+
+    </div>
+  </div> 
+ -->
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
         </div>
       </div>
     </div>
