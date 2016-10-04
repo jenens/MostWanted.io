@@ -2783,7 +2783,7 @@ video.responsive-video {
   float: none;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 960) {
   .pagination {
     width: 100%;
   }

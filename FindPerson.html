@@ -14,80 +14,111 @@
   <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
+    <nav class="white" role="navigation">
+    <div class="col-lg-12 col-md-12 col-md-12 col-md-12 col-sm-12">
       <!--   <a id="logo-container" href="#" class="brand-logo"></a> -->
       <ul class="right hide-on-med-and-down">
-        <li>
-          <a href="index.html">HOME</a>
+         <li>
+          <a class="home-text" href="index.html">HOME</a>
         </li>
         <li>
-          <a href="wanted.html">Find a Person</a>
+          <a href="FindPerson.html">Find Person</a>
         </li>
         <li>
-          <a href="#">Find Decendnats</a>
+          <a href="FindDecendants.html">Find Decendants</a>
         </li>
         <li>
-          <a href="#">Find Immediate Family</a>
+          <a href="FindImmediate.html">Find Immediate Family</a>
         </li>
         <li>
           <a class='dropdown-button btn' data-activates='dropdown1' href='#'>Next of
           Kin</a>
           <ul class='dropdown-content' id='dropdown1'>
             <li>
-              <a href="#!">Spouse</a>
+              <a href="#!">Find Spouse</a>
             </li>
             <li class="divider"></li>
             <li>
-              <a href="#!">Child</a>
+              <a href="#!">Find Child</a>
             </li>
             <li class="divider"></li>
             <li>
-              <a href="#!">Parent</a>
+              <a href="#!">Find Parent</a>
             </li>
             <li class="divider"></li>
             <li>
-              <a href="#!">Sibling</a>
+              <a href="#!">Find Sibling</a>
             </li>
             <li class="divider"></li>
             <li>
-              <a href="#!">Grandchild</a>
+              <a href="#!">Find Grandchild</a>
             </li>
             <li class="divider"></li>
             <li>
-              <a href="#!">Grandparent</a>
+              <a href="#!">Find Grandparent</a>
             </li>
             <li class="divider"></li>
             <li>
-              <a href="#!">Niece/Nephew</a>
+              <a href="#!">Find Niece/Nephew</a>
             </li>
             <li class="divider"></li>
             <li>
-              <a href="#!">Aunt/Uncle</a>
+              <a href="#!">Find Aunt/Uncle</a>
             </li>
             <li class="divider"></li>
             <li>
-              <a href="#!">Great Grandchild</a>
+              <a href="#!">Find Great Grandchild</a>
             </li>
             <li class="divider"></li>
             <li>
-              <a href="#!">Great Grandparent</a>
+              <a href="#!">Find Great Grandparent</a>
             </li>
           </ul>
+          <li><a href="search.html"><i class="material-icons left">search</i>Search by Attribute</a></li>
         </li>
       </ul>
       <ul class="side-nav" id="nav-mobile">
         <li>
-          <a href="#">Find a Person</a>
+          <a class="home-text" href="index.html">HOME</a>
         </li>
         <li>
-          <a href="#">Find Decendants</a>
+          <a href="FindPerson.html">Find Person</a>
+        </li>
+        <li>
+          <a href="html/FindDecendants.html">Find Decendants</a>
         </li>
         <li>
           <a href="#">Find Immediate Family</a>
         </li>
         <li>
-          <a href="#">Find Next Of Kin</a>
+          <a href="#">Find Spouse</a>
+        </li>
+         <li>
+          <a href="#">Find Child</a>
+        </li>
+         <li>
+          <a href="#">Find Parent</a>
+        </li>
+         <li>
+          <a href="#">Find Sibling</a>
+        </li>
+         <li>
+          <a href="#">Find Grandchild</a>
+        </li>
+         <li>
+          <a href="#">Find Grandparent</a>
+        </li>
+         <li>
+          <a href="#">Find Niece/Nephew</a>
+        </li>
+        <li>
+          <a href="#">Find Aunt/Uncle</a>
+        </li>
+         <li>
+          <a href="#">Find Great Grandchild</a>
+        </li>
+         <li>
+          <a href="#">Find Gradparent</a>
         </li>
       </ul><a class="button-collapse" data-activates="nav-mobile" href=
       "#"><i class="material-icons">menu</i></a>
@@ -99,43 +130,23 @@
       <h5 class="center">Find a person</h5>
       <p class="light"></p>
       <center>
-        If you know the first and last name of the person you are looking and if
-        they are in you will see all of their info displayed if that person is in
-        our database.
-        <center>
-          <p></p>
-          <form action="action_page.php">
-            <label for="fname">First Name</label><br>
-            <input id="fname" name="firstname" type="text"><br>
-            <label for="lname">Last Name</label><br>
-            <input id="lname" name="lastname" type="text"><br>
-            <!-- 
-    <label for="country">State</label>
-    <input type="text" id="lname" name="lastname"> -->
-             <!--    <select id="country" name="country">
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
-    </select>
-   -->
-             <input type="submit" value="SUBMIT">
+        Please type the first and last name of the person you are looking and if
+        they are found their info will be displayed.
+
+          <form>
+            <label for="firstName">First Name</label><br>
+            <input id="firstName" name="firstname" type="text"><br>
+            <label for="lastName">Last Name</label><br>
+            <input id="lastName" name="lastname" type="text"><br>
+            <button type="button" onclick="initSearch()">Search</button> <!-- Changed the button to grab the correct info -->
           </form>
+
+        <div id="targetInfo"> <!-- added target info -->
+      </div>          
+
         </center>
-      </center>
     </div>
-  </div><!--         <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div> 
- -->
+  </div>
   <div class="container">
     <div class="section">
       <div class="row">
@@ -153,8 +164,8 @@
         "http://materializecss.com">Materialize</a>
       </div>
     </div>
-  </footer><!--  Scripts-->
-  <script src="js/app.js" type="text/javascript">
+  </footer>
+  <script src="app1.js" type="text/javascript">
   </script> 
   <script src="https://code.jquery.com/jquery-2.1.1.min.js">
   </script> 
