@@ -296,7 +296,7 @@ function getChildren (idResults)
     }
 
 
-// BELOW FUNCTION IS NOT WORKING, var firstParentId and var secondParentId keep //coming back as undefined, even though they are typed the exact same way as the function //above this one. Trying to use this function recursively, and it is not working. PLEASE HELP. 
+
 
 
 
@@ -357,8 +357,6 @@ function initSearch()
     var firstName = "";
     var lastName = "";
 
-    // var id = "";
-
     var lookingFor = "";
     var characteristic = "";
     var characteristics = [];
@@ -416,9 +414,6 @@ function initSearch()
             break;
             
             case "3":
-            
-            //get dataObject, find all parents. Once parents are found, start gathering children. Push each succeeding child into a new array.
-            // go back up the tree, and follow the same pattern for any other children until there are no more descendants. 
 
 
             var idInfo = getInformation(firstName, lastName);
