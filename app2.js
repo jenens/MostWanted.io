@@ -272,39 +272,18 @@ function initSearch() {
     var answer = "";
     var firstName = "";
     var lastName = "";
-
-    // var id = "";
-
     var lookingFor = "";
     var characteristic = "";
     var characteristics = [];
 
-    // added document.getElementById for first name and last name and also added console.log
     firstName = document.getElementById("firstName").value; 
     lastName = document.getElementById("lastName").value;
     console.log (firstName, lastName);
 
-    //  commented out while and switch for case 1
 
-    // while (!(answer == "yes" || answer == "no")) {
-    //     answer = prompt("Do you know who you are looking for? (yes or no)");
-    // }
-    // if (answer == "yes") {
-    //     while (firstName == "") {
-    //         firstName = prompt("What's their first name?");
-    //     }
-    //     while (lastName == "") {
-    //         lastName = prompt("What's their last name?");
-    //     }
-    //     while (!(lookingFor == "1" || lookingFor == "2" || lookingFor == "3" ||
-    //         lookingFor == "4")) {
-    //         lookingFor = prompt(
-    //             "Are you looking for their 1-Info, 2-Descendants, 3-Family, or 4-Next of Kin (Please type a number between 1-4)?"
-    //             );
-    //         //filter? can we use a for loop here with a filter?
-    //     }
-        // switch (lookingFor) {
-        //     case "1":
+
+
+
             var allOfTheInfo = getInformation(firstName, lastName);
             var informationResults ="<p>ID: " + allOfTheInfo[0]['id'] + "<p> First Name: " + allOfTheInfo[0]['firstName'] + " Last Name: " + 
             allOfTheInfo[0]['lastName'] + "<p> Gender: " + allOfTheInfo[0]['gender'] + "<p> Date of Birth: " + allOfTheInfo[0]['dob'] + 
@@ -312,117 +291,50 @@ function initSearch() {
             " <p>Occupation: " + allOfTheInfo[0]['occupation'] + " <p>Parents: " + allOfTheInfo[0]['parents'] + " <p>Current Spouse: " +
             allOfTheInfo[0]['currentSpouse'];
 
-            // document.getElementById("targetInfo")
             document.getElementById("targetInfo").innerHTML = informationResults;
 
 
-            // alert(informationResults);
-        //     break;
 
-    //         case "2":
-    //         var idInfo = getInformation(firstName, lastName);
+            // var idInfo = getInformation(firstName, lastName);
+            // var parentResults = idInfo[0]['parents'];
+            // var idResults = idInfo[0]['id'];
+            // var descendantsResults = getChildrenRecursively (idResults);
+            // alert (descendantsResults);
 
-    //         var idResults = idInfo[0] ['id'];
-               
-
-    //             for (var i = 0; i < dataObject.length; i++) {
-    //                 console.log (dataObject[i]);
-    //                // alert(idResults);
-
-    //                 var idIntoANumber = parseInt(idResults, 10);
-    //                 var firstParentId = dataObject[i].parents[0];
-    //                 var secondParentId = dataObject[i].parents[1];
-
-    //                 if (idIntoANumber === firstParentId || idIntoANumber === secondParentId) {
-    //                     alert (dataObject[i].firstName + " " + dataObject[i].lastName);
-    //                     }
-
-    //                 //LEFT OFF HERE, TRYING TO FIGURE OUT HOW TO COMPARE idResults (which is a number) to parents (which is an array) within the
-    //                 // if statement directly above. Need to somehow access the array "parents" to pull out those numbers. May the odds be ever in your favor.
-
-    //             }
-    //             alert ("No descendants found.");
+            // document.getElementById("targetInfo").innerHTML = parentResults;
 
 
-                    
-    //         // alert(idResults);
-            
-
-
-    //         // var familyResults = getFamily(firstName, lastName);
-    //         // alert(familyResults[0]['firstName']);
-    //         // break;
-            
-
-    //         case "3":
-
-            
-    //         case "4":
-    //     }
-    // } else {
-    //     alert("Please come back when you have more information.");
-    //     return;
-    // }
 
     function getInformation(firstName, lastName) {
         return dataObject.filter(function(user) {
             if (user.firstName == firstName && user.lastName == lastName) {
                 return (user);
-            }
+                       }
         });
     }
+
+     
+   
+
+    // function getChildrenRecursively (idResults) {
+    //     var allDescendants = [];
+    //     for (var i = 0; i < dataObject.length; i++) {
+    //       if (dataObject[i].parents.length !== 0) {
+    //             var idIntoAnumber = parseInt(idResults, 10);
+    //             var firstParentId = dataObject[i].parents[0];
+    //             var secondParentId = dataObject[i].parents[1];
+    //             if (idIntoAnumber === firstParentId || idIntoAnumber === secondParentId) {
+    //                         allDescendants.push(dataObject[i].id);
+    //                         getChildrenRecursively(dataObject[i].id);}
+    //                         return (allDescendants);
+    //              }
+  
+
+
+       
+    }
+    
 
 
 
     
-    // function getFamily(firstName, lastName) {
-    //     return dataObject.filter(function(user) {
-    //         if (user.firstName == firstName && user.lastName == lastName) {
-    //             return (user);
-    //         }
-    //     });
-
-    //         }
-
-    // }
-
-    // for (var i = 0; i < 5; i++) {
-    //     while (characteristic == "") {
-    //         characteristic = prompt(
-    //             "Enter the characteristic of the person you are looking for");
-    //         //ask all 5 characteristics up front then filter it
-    //         //need switch case getFamily(firstName, lastName) getDescendants(firstName, lastName) getKin(firstName, LastName);
-    //         //begin filtering characteristics
-    //     }
-    //     characteristics.push(characteristic);
-    //     characteristic = "";
-    // }
-}
-
-
-// function getInfo (firstName, lastName){
-//  var results = "";
-//  responder(results);
-// }        
-// function getFamily(firstName, lastName){
-// }  
-// function getDescendants(firstName, lastName){
-//     var results = "";
-//     responder(results);
-// }        
-// function getKin(firstName, lastName){
-// }    
-// function filterPeople(characteristics){
-// }
-// function responder(results){
-//  alert(results);
-// }
-
-
-
-
-
-// there will be much more here, and some of the code above will certainly change
-
-// initSearch();
-// window.close(); // exit window as the end of the session -- you may remove this

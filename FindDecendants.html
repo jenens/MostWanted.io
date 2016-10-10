@@ -133,7 +133,7 @@
         Please type in the first and last name of the person you are looking for, if they have decendants they will be displayed.  
         <center>
           <p></p>
-          <form action="action_page.php">
+          <form>
             <label for="fname">First Name</label><br>
             <input id="fname" name="firstname" type="text"><br>
             <label for="lname">Last Name</label><br>
@@ -147,8 +147,11 @@
       <option value="usa">USA</option>
     </select>
    -->
-             <input type="submit" value="SUBMIT">
+            <!--  <input type="submit" value="SUBMIT"> -->
+            <button type="button" onclick="initSearch()">Search</button>
           </form>
+             <div id="targetInfo"> <!-- added target info -->
+      </div>   
         </center>
       </center>
     </div>
@@ -183,7 +186,7 @@
       </div>
     </div>
   </footer><!--  Scripts-->
-  <script src="js/app.js" type="text/javascript">
+  <script src="js/app2.js" type="text/javascript">
   </script> 
   <script src="https://code.jquery.com/jquery-2.1.1.min.js">
   </script> 
