@@ -243,24 +243,13 @@ var dataObject = [
 "currentSpouse": null}
 ];
 
-var firstName = "";
-var lastName = "";
-firstName = document.getElementById("firstName").value; 
-lastName = document.getElementById("lastName").value;
+// var firstName = "";
+// var lastName = "";
+// firstName = document.getElementById("firstName").value; 
+// lastName = document.getElementById("lastName").value;
 
 
-function pullMatch() 
-{
-    var allOfTheInfo = getInformation(firstName, lastName);
-    var informationResults ="<p>ID: " + allOfTheInfo[0]['id'] + "<p> First Name: " + allOfTheInfo[0]['firstName'] + " Last Name: " + 
-        allOfTheInfo[0]['lastName'] + "<p> Gender: " + allOfTheInfo[0]['gender'] + "<p> Date of Birth: " + allOfTheInfo[0]['dob'] + 
-        "<p> Height: " + allOfTheInfo[0]['height'] + " <p>Weight: " + allOfTheInfo[0]['weight'] + " <p>Eye Color: " + allOfTheInfo[0]['eyeColor'] +
-        " <p>Occupation: " + allOfTheInfo[0]['occupation'] + " <p>Parents: " + allOfTheInfo[0]['parents'] + " <p>Current Spouse: " +
-        allOfTheInfo[0]['currentSpouse'];
-}
-    
-
-
+TESTED THIS FUNCTION, IT WORKS, COMMENTED OUT FOR NOW. 
 function getInformation(firstName, lastName) 
 {
     return dataObject.filter(function(user) 
@@ -268,11 +257,170 @@ function getInformation(firstName, lastName)
         return user.firstName == firstName && user.lastName == lastName;       
     });
 }
+
+
+//
+function concatInfo(resultArray) 
+{
+    var informationResults = "";
+    for (var i=0; i < resultArray.length; i++) 
+    {
+    informationResults +="<br>ID: " + resultsArray[i]['id'] + "<br> First Name: " + resultsArray[i]['firstName'] + " Last Name: " + 
+        resultsArray[i]['lastName'] + "<br> Gender: " + resultsArray[i]['gender'] + "<br> Date of Birth: " + resultsArray[i]['dob'] + 
+        "<br> Height: " + resultsArray[i]['height'] + " <br>Weight: " + resultsArray[i]['weight'] + " <br>Eye Color: " + resultsArray[i]['eyeColor'] +
+        " <br>Occupation: " + resultsArray[i]['occupation'] + " <br>Parents: " + resultsArray[i]['parents'] + " <br>Current Spouse: " +
+        resultsArray[i]['currentSpouse'];
+    }
+
+        return informationResults;
+}
     
+
 function displayResults(informationResults)
 {
        document.getElementById("targetInfo").innerHTML = informationResults; 
 }
+
+
+function getChildren (idResults) 
+    {
+       for (var i = 0; i < dataObject.length; i++) 
+        {
+            console.log (dataObject[i]);
+
+            var idIntoANumber = parseInt(idResults);
+            var firstParentId = dataObject[i].parents[0];
+            var secondParentId = dataObject[i].parents[1];
+
+            if (idIntoANumber === firstParentId || idIntoANumber === secondParentId) 
+                        {
+                        alert (dataObject[i].firstName + " " + dataObject[i].lastName);
+                        }
+        }
+         
+    }
+
+
+function getChildrenRecursively (idResults) 
+{
+    var allDescendants = [];
+        for (var i = 0; i < dataObject.length; i++) 
+        {
+            if (dataObject[i].parents.length !== 0)
+            {
+                var idIntoAnumber = parseInt(idResults, 10);
+                var firstParentId = dataObject[i].parents[0];
+                var secondParentId = dataObject[i].parents[1];
+
+                    if (idIntoAnumber === firstParentId || idIntoAnumber === secondParentId)
+                    {
+                        allDescendants.push(dataObject[i].id);
+                        getChildrenRecursively(dataObject[i].id);
+                    }
+
+            }
+        }
+
+        return (allDescendants);
+}
+
+function initSearch() 
+{
+    var answer = "";
+    var firstName = "";
+    var lastName = "";
+
+    // var id = "";
+
+    var lookingFor = "";
+    var characteristic = "";
+    var characteristics = [];
+
+    while (!(answer == "yes" || answer == "no")) 
+    {
+        answer = prompt("Do you know who you are looking for? (yes or no)");
+    }
+    if (answer == "yes") 
+    {
+        while (firstName == "") 
+        {
+            firstName = prompt("What's their first name?");
+        }
+        while (lastName == "") 
+        {
+            lastName = prompt("What's their last name?");
+        }
+        while (!(lookingFor == "1" || lookingFor == "2" || lookingFor == "3" ||
+        lookingFor == "4")) 
+        {
+            lookingFor = prompt(
+                "Are you looking for their 1-Info, 2-Descendants, 3-Family, or 4-Next of Kin (Please type a number between 1-4.)?"
+                );
+        }
+        
+        switch (lookingFor) 
+        {
+            case "1":
+            
+                var allOfTheInfo = getInformation(firstName, lastName);
+                var informationResults ="ID: " + allOfTheInfo[0]['id'] + " First Name: " + allOfTheInfo[0]['firstName'] + " Last Name: " + 
+                allOfTheInfo[0]['lastName'] + " Gender: " + allOfTheInfo[0]['gender'] + " Date of Birth: " + allOfTheInfo[0]['dob'] + 
+                " Height: " + allOfTheInfo[0]['height'] + " Weight: " + allOfTheInfo[0]['weight'] + " Eye Color: " + allOfTheInfo[0]['eyeColor'] +
+                " Occupation: " + allOfTheInfo[0]['occupation'] + " Parents: " + allOfTheInfo[0]['parents'] + " Current Spouse: " +
+                allOfTheInfo[0]['currentSpouse'];
+                alert(informationResults);
+            
+            break;
+
+            case "2":
+                var idInfo = getInformation(firstName, lastName);
+
+                var parentResults = idInfo[0]['parents'];
+
+                var idResults = idInfo[0]['id'];
+            
+
+
+                var descendantsResults = getChildrenRecursively (idResults);
+
+                if (descendantsResults
+                alert (descendantsResults);
+                
+                // alert ("No descendants found.");
+            break;
+            
+            case "3":
+            
+            //get dataObject, find all parents. Once parents are found, start gathering children. Push each succeeding child into a new array.
+            // go back up the tree, and follow the same pattern for any other children until there are no more descendants. 
+
+
+            var idInfo = getInformation(firstName, lastName);
+            
+            //PARENTS:
+            var parentResults = idInfo[0]['parents'];
+
+
+            //SIBLINGS:
+
+
+
+            //SPOUSE: 
+
+            //CHILDREN: 
+            var idResults = idInfo[0]['id'];
+
+            getChildren (idResults);
+
+
+                //spouse, children, parents, siblings.
+            
+            case "4":
+        }
+    } 
+
+
+
 
     // var idInfo = getInformation(firstName, lastName);
     // var parentResults = idInfo[0]['parents'];
