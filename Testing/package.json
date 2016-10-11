@@ -1,12 +1,12 @@
 {
-  "name": "testing",
+  "name": "most wanted project",
   "version": "1.0.0",
-  "description": "testing folder for our mostwanted project",
-  "main": "script-spec.js",
+  "description": "Our Most Wanted project",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start karma.conf.js"
   },
-  "author": "",
+  "author": "Mike and Jen",
   "license": "ISC",
   "devDependencies": {
     "jasmine-core": "^2.5.2",

@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Tue Oct 11 2016 13:55:37 GMT-0500 (Central Daylight Time)
+// Generated on Tue Oct 11 2016 14:49:13 GMT-0500 (CDT)
 
 module.exports = function(config) {
   config.set({
