@@ -282,8 +282,11 @@ function displayResults(informationResults)
 }
 
 
-function getChildren (idResults) 
+function getChildren () 
     {
+            var idInfo = getInformation(firstName, lastName);
+            var idResults = idInfo[0] ['id'];
+
        for (var i = 0; i < dataObject.length; i++) 
         {
             console.log (dataObject[i]);
@@ -294,7 +297,7 @@ function getChildren (idResults)
 
             if (idIntoANumber === firstParentId || idIntoANumber === secondParentId) 
                         {
-                        alert (dataObject[i].firstName + " " + dataObject[i].lastName);
+                        return dataObject[i].firstName + " " + dataObject[i].lastName;
                         }
         }
          

@@ -26,3 +26,16 @@ describe('function concatInfo', function(){
 	});
 });
 
+
+describe('function getChildren', function(){
+	it('Iteratively finds the children of the people we are looking for', function(){
+		var id = 
+	})
+		expect(something).toEqual(){
+
+		}
+});
+
+
+
+
