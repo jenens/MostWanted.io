@@ -9,9 +9,7 @@ var dataObject = [
 "eyeColor": "brown",
 "occupation": "programmer",
 "parents": [],
-"currentSpouse": 401222887 
-},
-
+"currentSpouse": 401222887},
 {   "id": "401222887",
 "firstName": "Uma",
 "lastName": "Bob",
@@ -22,9 +20,7 @@ var dataObject = [
 "eyeColor": "brown",
 "occupation": "assistant",
 "parents": [],
-"currentSpouse": 272822514
-},
-
+"currentSpouse": 272822514},
 {   "id": "409574486",  
 "firstName": "Michael",
 "lastName": "Walkens",
@@ -35,8 +31,7 @@ var dataObject = [
 "eyeColor": "brown",
 "occupation": "landscaper",
 "parents": [],
-"currentSpouse": 260451248 
-},
+"currentSpouse": 260451248},
 {   "id": "260451248",  
 "firstName": "Jon",
 "lastName": "Walkens",
@@ -47,8 +42,7 @@ var dataObject = [
 "eyeColor": "brown",
 "occupation": "assistant",
 "parents": [],
-"currentSpouse": 409574486 
-},
+"currentSpouse": 409574486},
 {   "id": "629807187",
 "firstName": "Jack",
 "lastName": "Pafoy",
@@ -59,8 +53,7 @@ var dataObject = [
 "eyeColor": "black",
 "occupation": "nurse",
 "parents": [],
-"currentSpouse": 464142841 
-},
+"currentSpouse": 464142841},
 {   "id": "464142841",
 "firstName": "Jen",
 "lastName": "Pafoy",
@@ -71,8 +64,7 @@ var dataObject = [
 "eyeColor": "black",
 "occupation": "student",
 "parents": [],
-"currentSpouse": 629807187 
-},
+"currentSpouse": 629807187},
 {   "id": "982411429",
 "firstName": "Mister",
 "lastName": "Potatoo",
@@ -83,8 +75,7 @@ var dataObject = [
 "eyeColor": "hazel",
 "occupation": "architect",
 "parents": [],
-"currentSpouse": 595767575 
-},
+"currentSpouse": 595767575},
 {   "id": "595767575",
 "firstName": "Missuz",
 "lastName": "Potatoo",
@@ -95,8 +86,7 @@ var dataObject = [
 "eyeColor": "blue",
 "occupation": "architect",
 "parents": [],
-"currentSpouse": 982411429 
-},
+"currentSpouse": 982411429},
 {   "id": "693243224",
 "firstName": "Joy",
 "lastName": "Madden",
@@ -107,8 +97,7 @@ var dataObject = [
 "eyeColor": "hazel",
 "occupation": "doctor",
 "parents": [],
-"currentSpouse": 693243224 
-},
+"currentSpouse": 693243224},
 {   "id": "888201200",
 "firstName": "Mader",
 "lastName": "Madden",
@@ -119,8 +108,7 @@ var dataObject = [
 "eyeColor": "black",
 "occupation": "landscaper",
 "parents": [],
-"currentSpouse": 888201200 
-},
+"currentSpouse": 888201200},
 {   "id": "878013758",
 "firstName": "Jill",
 "lastName": "Pafoy",
@@ -131,8 +119,7 @@ var dataObject = [
 "eyeColor": "brown",
 "occupation": "programmer",
 "parents": [401222887,401222887],
-"currentSpouse": 294874671 
-},
+"currentSpouse": 294874671},
 {   "id": "951747547",
 "firstName": "Ralph",
 "lastName": "Bob",
@@ -143,8 +130,7 @@ var dataObject = [
 "eyeColor": "blue",
 "occupation": "nurse",
 "parents": [401222887,401222887],
-"currentSpouse": 159819275 
-},
+"currentSpouse": 159819275},
 {   "id": "159819275",
 "firstName": "Jasmine",
 "lastName": "Bob",
@@ -155,8 +141,7 @@ var dataObject = [
 "eyeColor": "blue",
 "occupation": "assistant",
 "parents": [409574486,260451248],
-"currentSpouse": 951747547 
-},
+"currentSpouse": 951747547},
 {   "id": "348457184",
 "firstName": "Annie",
 "lastName": "Pafoy",
@@ -167,8 +152,7 @@ var dataObject = [
 "eyeColor": "hazel",
 "occupation": "landscaper",
 "parents": [629807187,464142841],
-"currentSpouse": null 
-},
+"currentSpouse": null},
 {   "id": "294874671",
 "firstName": "Dave",
 "lastName": "Pafoy",
@@ -179,8 +163,7 @@ var dataObject = [
 "eyeColor": "green",
 "occupation": "doctor",
 "parents": [629807187,464142841],
-"currentSpouse": 878013758 
-},
+"currentSpouse": 878013758},
 {   "id": "931247228",
 "firstName": "Amii",
 "lastName": "Pafoy",
@@ -191,8 +174,7 @@ var dataObject = [
 "eyeColor": "brown",
 "occupation": "landscaper",
 "parents": [629807187,464142841],
-"currentSpouse": null 
-},
+"currentSpouse": null},
 {   "id": "822843554",
 "firstName": "Regina",
 "lastName": "Madden",
@@ -203,8 +185,7 @@ var dataObject = [
 "eyeColor": "brown",
 "occupation": "nurse",
 "parents": [693243224, 888201200],
-"currentSpouse": null 
-},
+"currentSpouse": null},
 {   "id": "819168108",
 "firstName": "Hana",
 "lastName": "Madden",
@@ -215,8 +196,7 @@ var dataObject = [
 "eyeColor": "brown",
 "occupation": "politician",
 "parents": [693243224, 888201200],
-"currentSpouse": null 
-},
+"currentSpouse": null},
 {   "id": "969837479",
 "firstName": "Eloise",
 "lastName": "Madden",
@@ -227,8 +207,7 @@ var dataObject = [
 "eyeColor": "brown",
 "occupation": "assistant",
 "parents": [693243224, 888201200],
-"currentSpouse": null 
-},
+"currentSpouse": null},
 {   "id": "313207561",
 "firstName": "Mattias",
 "lastName": "Madden",
@@ -239,8 +218,7 @@ var dataObject = [
 "eyeColor": "blue",
 "occupation": "assistant",
 "parents": [693243224, 888201200],
-"currentSpouse": 313997561 
-},
+"currentSpouse": 313997561},
 {   "id": "313997561",
 "firstName": "Ellen",
 "lastName": "Madden",
@@ -251,8 +229,7 @@ var dataObject = [
 "eyeColor": "blue",
 "occupation": "doctor",
 "parents": [],
-"currentSpouse": 313207561 
-},
+"currentSpouse": 313207561},
 {   "id": "313998000",
 "firstName": "Joey",
 "lastName": "Madden",
@@ -263,226 +240,43 @@ var dataObject = [
 "eyeColor": "blue",
 "occupation": "doctor",
 "parents": [313207561,313997561],
-"currentSpouse": null 
-}
+"currentSpouse": null}
 ];
 
-/*  Remove this from your final submission
-function printAllToConsole(dataObj){
-    for (var key in dataObj) {
-        if (dataObj.hasOwnProperty(key)) {
-            console.log(key + " -> " + JSON.stringify(dataObj[key]));
-        }
-    }
-}
-printAllToConsole(dataObject);
-*/
-
-function getChildren (idResults) 
-    {
-       for (var i = 0; i < dataObject.length; i++) 
-        {
-            console.log (dataObject[i]);
-
-            var idIntoANumber = parseInt(idResults, 10);
-            var firstParentId = dataObject[i].parents[0];
-            var secondParentId = dataObject[i].parents[1];
-
-            if (idIntoANumber === firstParentId || idIntoANumber === secondParentId) 
-                        {
-                        alert (dataObject[i].firstName + " " + dataObject[i].lastName);
-                        }
-        } 
-    }
+var firstName = "";
+var lastName = "";
+firstName = document.getElementById("firstName").value; 
+lastName = document.getElementById("lastName").value;
 
 
-
-
-
-
-    
-    function getChildrenRecursively (idResults) 
-    {
-        var allDescendants = [];
-
-        for (var i = 0; i < dataObject.length; i++) 
-        {
-
-                    if (dataObject[i].parents.length !== 0)
-                    {
-                        var idIntoAnumber = parseInt(idResults, 10);
-                        var firstParentId = dataObject[i].parents[0];
-                        var secondParentId = dataObject[i].parents[1];
-
-                        if (idIntoAnumber === firstParentId || idIntoAnumber === secondParentId)
-                        {
-                            allDescendants.push(dataObject[i].id);
-                            getChildrenRecursively(dataObject[i].id);
-                        }
-
-                    }
-        }
-
-        return (allDescendants);
-    }
-
-
-    function getInformation(firstName, lastName) 
-    {
-        return dataObject.filter(function(user) 
-        {
-            if (user.firstName == firstName && user.lastName == lastName) 
-            {
-                return (user);
-            }
-        });
-    }
-    
-
-    function getFamily(firstName, lastName) 
-    {
-        return dataObject.filter(function(user) 
-        {
-            if (user.firstName == firstName && user.lastName == lastName) 
-            {
-                return (user);
-            }
-        });
-
-    }
-
-function initSearch() 
+function pullMatch() 
 {
-    var answer = "";
-    var firstName = "";
-    var lastName = "";
+    var allOfTheInfo = getInformation(firstName, lastName);
+    var informationResults ="<p>ID: " + allOfTheInfo[0]['id'] + "<p> First Name: " + allOfTheInfo[0]['firstName'] + " Last Name: " + 
+        allOfTheInfo[0]['lastName'] + "<p> Gender: " + allOfTheInfo[0]['gender'] + "<p> Date of Birth: " + allOfTheInfo[0]['dob'] + 
+        "<p> Height: " + allOfTheInfo[0]['height'] + " <p>Weight: " + allOfTheInfo[0]['weight'] + " <p>Eye Color: " + allOfTheInfo[0]['eyeColor'] +
+        " <p>Occupation: " + allOfTheInfo[0]['occupation'] + " <p>Parents: " + allOfTheInfo[0]['parents'] + " <p>Current Spouse: " +
+        allOfTheInfo[0]['currentSpouse'];
+}
+    
 
-    var lookingFor = "";
-    var characteristic = "";
-    var characteristics = [];
 
-    while (!(answer == "yes" || answer == "no")) 
+function getInformation(firstName, lastName) 
+{
+    return dataObject.filter(function(user) 
     {
-        answer = prompt("Do you know who you are looking for? (yes or no)");
-    }
-    if (answer == "yes") 
-    {
-        while (firstName == "") 
-        {
-            firstName = prompt("What's their first name?");
-        }
-        while (lastName == "") 
-        {
-            lastName = prompt("What's their last name?");
-        }
-        while (!(lookingFor == "1" || lookingFor == "2" || lookingFor == "3" ||
-        lookingFor == "4")) 
-        {
-            lookingFor = prompt(
-                "Are you looking for their 1-Info, 2-Descendants, 3-Family, or 4-Next of Kin (Please type a number between 1-4.)?"
-                );
-        }
-        
-        switch (lookingFor) 
-        {
-            case "1":
-            
-                var allOfTheInfo = getInformation(firstName, lastName);
-                var informationResults ="ID: " + allOfTheInfo[0]['id'] + " First Name: " + allOfTheInfo[0]['firstName'] + " Last Name: " + 
-                allOfTheInfo[0]['lastName'] + " Gender: " + allOfTheInfo[0]['gender'] + " Date of Birth: " + allOfTheInfo[0]['dob'] + 
-                " Height: " + allOfTheInfo[0]['height'] + " Weight: " + allOfTheInfo[0]['weight'] + " Eye Color: " + allOfTheInfo[0]['eyeColor'] +
-                " Occupation: " + allOfTheInfo[0]['occupation'] + " Parents: " + allOfTheInfo[0]['parents'] + " Current Spouse: " +
-                allOfTheInfo[0]['currentSpouse'];
-                alert(informationResults);
-            
-            break;
-
-            case "2":
-                var idInfo = getInformation(firstName, lastName);
-
-                var parentResults = idInfo[0]['parents'];
-
-                var idResults = idInfo[0]['id'];
-            
-
-
-                var descendantsResults = getChildrenRecursively (idResults);
-
-                alert (descendantsResults);
-                
-                // alert ("No descendants found.");
-            break;
-            
-            case "3":
-
-
-            var idInfo = getInformation(firstName, lastName);
-            
-            //PARENTS:
-            var parentResults = idInfo[0]['parents'];
-
-
-            //SIBLINGS:
-
-
-
-            //SPOUSE: 
-
-            //CHILDREN: 
-            var idResults = idInfo[0]['id'];
-
-            getChildren (idResults);
-
-
-                //spouse, children, parents, siblings.
-            
-            case "4":
-        }
-    } 
-
-    else 
-      {
-        alert("Please come back when you have more information.");
-        return;
-      }
-
-    for (var i = 0; i < 5; i++) {
-        while (characteristic == "") {
-            characteristic = prompt(
-                "Enter the characteristic of the person you are looking for");
-            //ask all 5 characteristics up front then filter it
-            //need switch case getFamily(firstName, lastName) getDescendants(firstName, lastName) getKin(firstName, LastName);
-            //begin filtering characteristics
-        }
-        characteristics.push(characteristic);
-        characteristic = "";
-    }
+        return user.firstName == firstName && user.lastName == lastName;       
+    });
+}
+    
+function displayResults(informationResults)
+{
+       document.getElementById("targetInfo").innerHTML = informationResults; 
 }
 
-
-// function getInfo (firstName, lastName){
-//  var results = "";
-//  responder(results);
-// }        
-// function getFamily(firstName, lastName){
-// }  
-// function getDescendants(firstName, lastName){
-//     var results = "";
-//     responder(results);
-// }        
-// function getKin(firstName, lastName){
-// }    
-// function filterPeople(characteristics){
-// }
-// function responder(results){
-//  alert(results);
-// }
-
-
-
-
-
-// there will be much more here, and some of the code above will certainly change
-
-initSearch();
-// window.close(); // exit window as the end of the session -- you may remove this
+    // var idInfo = getInformation(firstName, lastName);
+    // var parentResults = idInfo[0]['parents'];
+    // var idResults = idInfo[0]['id'];
+    // var descendantsResults = getChildrenRecursively (idResults);
+            
+    // alert (descendantsResults);
