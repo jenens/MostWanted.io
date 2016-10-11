@@ -249,7 +249,7 @@ var dataObject = [
 // lastName = document.getElementById("lastName").value;
 
 
-TESTED THIS FUNCTION, IT WORKS, COMMENTED OUT FOR NOW. 
+// TESTED THIS FUNCTION, IT WORKS, COMMENTED OUT FOR NOW. 
 function getInformation(firstName, lastName) 
 {
     return dataObject.filter(function(user) 
@@ -260,10 +260,10 @@ function getInformation(firstName, lastName)
 
 
 //
-function concatInfo(resultArray) 
+function concatInfo(resultsArray) 
 {
     var informationResults = "";
-    for (var i=0; i < resultArray.length; i++) 
+    for (var i=0; i < resultsArray.length; i++) 
     {
     informationResults +="<br>ID: " + resultsArray[i]['id'] + "<br> First Name: " + resultsArray[i]['firstName'] + " Last Name: " + 
         resultsArray[i]['lastName'] + "<br> Gender: " + resultsArray[i]['gender'] + "<br> Date of Birth: " + resultsArray[i]['dob'] + 
@@ -271,7 +271,7 @@ function concatInfo(resultArray)
         " <br>Occupation: " + resultsArray[i]['occupation'] + " <br>Parents: " + resultsArray[i]['parents'] + " <br>Current Spouse: " +
         resultsArray[i]['currentSpouse'];
     }
-
+        console.log(informationResults);
         return informationResults;
 }
     
@@ -383,9 +383,9 @@ function initSearch()
 
                 var descendantsResults = getChildrenRecursively (idResults);
 
-                if (descendantsResults
-                alert (descendantsResults);
-                
+                if (descendantsResults){
+                    alert (descendantsResults);
+                }
                 // alert ("No descendants found.");
             break;
             
@@ -417,7 +417,8 @@ function initSearch()
             
             case "4":
         }
-    } 
+    }
+} 
 
 
 
