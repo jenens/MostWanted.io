@@ -36,6 +36,13 @@ describe('function getChildren', function(){
 	});
 });
 
+describe('function getDescendantsRecursively', function(){
+	it('Recursively goes through the dataobject to match up user input to pull all descendants', function(){
+		var descendants = getDescendantsRecursively([{"id":"313997561"}]);
+		expect(descendants).toEqual("313998000");
+	});
+});
 
+//Can't get this test to work, really not sure why. Because recursive functions are hard. really hard. 
 
 

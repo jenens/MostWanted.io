@@ -319,7 +319,7 @@ function getDescendantsRecursively (idResults)
                     if (idIntoAnumber === firstParentId || idIntoAnumber === secondParentId)
                     {
                         allDescendants.push(dataObject[i].id);
-                        getChildrenRecursively(dataObject[i].id);
+                        getDescendantsRecursively(dataObject[i].id);
                     }
 
             }
