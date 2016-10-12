@@ -292,6 +292,26 @@ function getDescendantsRecursively (idResults)
 }
 
 //THIS FUNCTION WORKS, PART OF GOAL 5
+function getParents(person)
+{
+    var parents = [];
+    for (var i = 0; i < dataObject.length; i++)
+    {
+        var parentOneIdString = person.parents[0];
+        var parentTwoIdString = person.parents[1];
+        var allObjectsId = parseInt(dataObject[i].id);
+
+        if (parentOneIdString === allObjectsId || parentTwoIdString === allObjectsId)
+        {
+            parents.push(dataObject[i]); 
+        }
+    }
+    
+    return parents;
+}
+
+
+//THIS FUNCTION WORKS, PART OF GOAL 5
 function getSiblings(person)
 {
     var siblings = [];
