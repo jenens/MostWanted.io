@@ -243,86 +243,115 @@ var dataObject = [
 "currentSpouse": null}
 ];
 
-var firstName = "";
-var lastName = "";
-firstName = document.getElementById("firstName").value;
-lastName = document.getElementById("lastName").value;
+function getFirstNameParam()
+{
+    return document.getElementById("firstName").value;
+}
 
+function getLastNameParam()
+{
+    return document.getElementById("lastName").value;
+}
+
+
+// var firstName = document.getElementById("firstName");
+// var lastName = document.getElementById("lastName");
+
+//THIS FUNCTION WORKS, GOAL 2 COMPLETE 
 function getInformation(firstName, lastName)
 {
-  return dataObject.filter(function(user)
-  {
-    return user.firstName == firstName && user.lastName == lastName;
-  });
-}
-
-function concatInfo(resultsArray)
-{   
-  var personInfo = getInformation(firstName, lastName);
-  var informationResults = "";
-  for (var i=0; i < personInfo.length; i++)
-  {
-  informationResults +="<br>ID: " + resultsArray[i]['id'] + "<br> First Name: " + resultsArray[i]['firstName'] + " Last Name: " +
-    resultsArray[i]['lastName'] + "<br> Gender: " + resultsArray[i]['gender'] + "<br> Date of Birth: " + resultsArray[i]['dob'] +
-    "<br> Height: " + resultsArray[i]['height'] + " <br>Weight: " + resultsArray[i]['weight'] + " <br>Eye Color: " + resultsArray[i]['eyeColor'] +
-    " <br>Occupation: " + resultsArray[i]['occupation'] + " <br>Parents: " + resultsArray[i]['parents'] + " <br>Current Spouse: " +
-    resultsArray[i]['currentSpouse'];
-  }
-  // console.log(informationResults); <--- used this to see what to put in our test.
-  return informationResults;
-}
-
-function displayResults(informationResults)
-{
-  document.getElementById("targetInfo").innerHTML = informationResults;
-}
-
-
-function getChildren(person)
-{
-  var children = [];
-  var idInfo = person;
-  var idResults = idInfo[0]['id'];
-
-  for (var i = 0; i < dataObject.length; i++)
-  {
-    console.log (dataObject[i]);
-
-    var idIntoANumber = parseInt(idResults);
-    var firstParentId = dataObject[i].parents[0];
-    var secondParentId = dataObject[i].parents[1];
-
-    if (idIntoANumber === firstParentId || idIntoANumber === secondParentId)
+    for(var i = 0; i < dataObject.length; i++)
     {
-      children.push(dataObject[i]);
+        if (firstName == dataObject[i].firstName && lastName == dataObject[i].lastName)
+        {
+            return(dataObject[i]);
+        }
     }
-  }
-  return children;
 }
 
-
+//THIS FUNCTION NEEDS WORK, IS GOAL 4
 function getDescendantsRecursively (idResults)
 {
-  var allDescendants = [];
+    var allDescendants = [];
     for (var i = 0; i < dataObject.length; i++)
     {
-      if (dataObject[i].parents.length !== 0)
-      {
-      var idIntoAnumber = parseInt(idResults, 10);
-      var firstParentId = dataObject[i].parents[0];
-      var secondParentId = dataObject[i].parents[1];
+        if (dataObject[i].parents.length !== 0)
+        {
+            var idIntoAnumber = parseInt(idResults, 10);
+            var firstParentId = dataObject[i].parents[0];
+            var secondParentId = dataObject[i].parents[1];
 
-          if (idIntoAnumber === firstParentId || idIntoAnumber === secondParentId)
-          {
-            allDescendants.push(dataObject[i].id);
-            getDescendantsRecursively(dataObject[i].id);
-          }
-      }
+            if (idIntoAnumber === firstParentId || idIntoAnumber === secondParentId)
+            {
+                allDescendants.push(dataObject[i].id);
+                getDescendantsRecursively(dataObject[i].id);
+            }
+        }
     }
     return (allDescendants);
 }
 
+
+//THIS FUNCTION WORKS, IS PART OF GOAL 5
+function getChildren(person)
+{
+    var children = [];
+
+    for (var i = 0; i < dataObject.length; i++)
+    {
+        var idIntoANumber = parseInt(person.id);
+        var firstParentId = dataObject[i].parents[0];
+        var secondParentId = dataObject[i].parents[1];
+
+        if (idIntoANumber === firstParentId || idIntoANumber === secondParentId)
+        {
+            children.push(dataObject[i]);
+        }
+    }
+    return children;
+}
+
+//THIS FUNCTION WORKS, IS PART OF GOAL 5
+function getSpouse(person)
+{
+    for (var i = 0; i < dataObject.length; i++)
+    {
+        var idIntoANumber = parseInt(person.id);
+        var currentSpouseId = dataObject[i].currentSpouse;
+
+        if (idIntoANumber === currentSpouseId)
+        {
+            return (dataObject[i]);
+        }
+    }
+}
+
+//THIS FUNCTION SHOULD BE ABLE TO CONCAT THE RESULTS OF ALL PREVIOUS FUNCTIONS TO GET IT READY TO BE DISPLAYED, NEEDS WORK. 
+function concatInfo()
+{   
+    var personInfo = getInformation(firstName, lastName);
+    var informationResults = "";
+  
+    for (var i=0; i < personInfo.length; i++)
+    {
+        informationResults +="<br>ID: " + resultsArray[i]['id'] + "<br> First Name: " + resultsArray[i]['firstName'] + " Last Name: " +
+        resultsArray[i]['lastName'] + "<br> Gender: " + resultsArray[i]['gender'] + "<br> Date of Birth: " + resultsArray[i]['dob'] +
+        "<br> Height: " + resultsArray[i]['height'] + " <br>Weight: " + resultsArray[i]['weight'] + " <br>Eye Color: " + resultsArray[i]['eyeColor'] +
+        " <br>Occupation: " + resultsArray[i]['occupation'] + " <br>Parents: " + resultsArray[i]['parents'] + " <br>Current Spouse: " +
+        resultsArray[i]['currentSpouse'];
+    }
+    // console.log(informationResults); <--- used this to see what to put in our test.
+    return informationResults;
+}
+
+//THIS FUNCTION SHOULD BE ABLE TO ACTUALLY DISPLAY THE RESULTS FROM CONCATINFO TO THE HTML PAGE, MAY NEED WORK. 
+function displayResults(informationResults)
+{
+    document.getElementById("targetInfo").innerHTML = informationResults;
+}
+
 // this is to initialize multiple select dropdown on html page
-  $(document).ready(function() {
+$(document).ready(function() 
+{
     $('select').material_select();
-  });
+});
