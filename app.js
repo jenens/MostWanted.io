@@ -291,6 +291,44 @@ function getDescendantsRecursively (idResults)
     return (allDescendants);
 }
 
+//THIS FUNCTION WORKS, PART OF GOAL 5
+function getSiblings(person)
+{
+    var siblings = [];
+    for (var i = 0; i < dataObject.length; i++)
+    {
+        var personsFirstParent = person.parents[0];
+        var allObjectsFirstParent= dataObject[i].parents[0];
+        var personsSecondParent = person.parents[1];
+        var allObjectsSecondParent = dataObject[i].parents[1];
+
+        if (person.id === dataObject[i].id)
+        {
+            //do nothing
+        }
+
+        else if (personsFirstParent === allObjectsFirstParent || personsSecondParent === allObjectsSecondParent)
+        {
+            siblings.push(dataObject[i]);
+        }
+    }
+    return siblings;
+}
+
+//THIS FUNCTION WORKS, IS PART OF GOAL 5
+function getSpouse(person)
+{
+    for (var i = 0; i < dataObject.length; i++)
+    {
+        var idIntoANumber = parseInt(person.id);
+        var currentSpouseId = dataObject[i].currentSpouse;
+
+        if (idIntoANumber === currentSpouseId)
+        {
+            return (dataObject[i]);
+        }
+    }
+}
 
 //THIS FUNCTION WORKS, IS PART OF GOAL 5
 function getChildren(person)
@@ -309,21 +347,6 @@ function getChildren(person)
         }
     }
     return children;
-}
-
-//THIS FUNCTION WORKS, IS PART OF GOAL 5
-function getSpouse(person)
-{
-    for (var i = 0; i < dataObject.length; i++)
-    {
-        var idIntoANumber = parseInt(person.id);
-        var currentSpouseId = dataObject[i].currentSpouse;
-
-        if (idIntoANumber === currentSpouseId)
-        {
-            return (dataObject[i]);
-        }
-    }
 }
 
 //THIS FUNCTION SHOULD BE ABLE TO CONCAT THE RESULTS OF ALL PREVIOUS FUNCTIONS TO GET IT READY TO BE DISPLAYED, NEEDS WORK. 
