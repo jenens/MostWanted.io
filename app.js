@@ -334,6 +334,9 @@ function getSiblings(person)
     }
     return siblings;
 }
+//THIS IS THE CALL FOR ABOVE FUNCTION. REMINDER TO PASS GETINFORMATION() INTO THE PARAMETERS OF THE CALL TO MAKE FUNCTION WORK. 
+// getSiblings(getInformation(firstName, lastName));
+
 
 //THIS FUNCTION WORKS, IS PART OF GOAL 5
 function getSpouse(person)
