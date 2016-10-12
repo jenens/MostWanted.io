@@ -282,10 +282,11 @@ function displayResults(informationResults)
 }
 
 
-function getChildren () 
+function getChildren(person) 
     {
-            var idInfo = getInformation(firstName, lastName);
-            var idResults = idInfo[0] ['id'];
+            var children = [];
+            var idInfo = person;
+            var idResults = idInfo[0]['id'];
 
        for (var i = 0; i < dataObject.length; i++) 
         {
@@ -297,10 +298,10 @@ function getChildren ()
 
             if (idIntoANumber === firstParentId || idIntoANumber === secondParentId) 
                         {
-                        return dataObject[i].firstName + " " + dataObject[i].lastName;
+                        children.push(dataObject[i]);
                         }
         }
-         
+            return children;
     }
 
 

@@ -29,11 +29,11 @@ describe('function concatInfo', function(){
 
 describe('function getChildren', function(){
 	it('Iteratively finds the children of the people we are looking for', function(){
-		var id = 
-	})
-		expect(something).toEqual(){
+	
+		var children = getChildren([{"id": "313997561"}]);
+		expect(children[0].id).toEqual("313998000")
 
-		}
+	});
 });
 
 
