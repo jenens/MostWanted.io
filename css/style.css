@@ -18,20 +18,20 @@ padding: 5px;
 
 }
 
+.header{
+  font-size: 50px;
+  font-weight: 400;
+  color: #26a69a;
+}
+
+
 .results{
   font-size: 12px;
   color:black;
   margin: 5px;
   padding:5px;
-
 }
 
-.headImage  {
-  width: 100%;
-    height: 400px;
-    background-image: img src="img/crime_scene1.png">);
-    background-size: 100% 100%;
-}
 
 
 .wideColumn{
@@ -133,6 +133,7 @@ padding: 5px;
 .div { 
  padding: 2px;
  margin: 2px;
+ max-width: 1000px;
 }
 
 .select-wrapper { 
@@ -152,12 +153,18 @@ padding: 5px;
 }
 
 .input {
-  width: 60px;
+  width: 300px;
   height: 30px;
   font-size: 12px;
 
   }
 
+/*.input-field {
+  width: 300px;
+  height: 30px;
+  font-size: 12px;
+  margi*/n: 5px;
+}
 
 @media only screen and (max-width : 600px) {
   #index-banner .section {
@@ -209,6 +216,23 @@ footer.page-footer {
   position: top;
 }
 
+.float-left{
+  float: left;
+  width: 400px;
+  margin: 0 0 10px 10px;
+  clear: left;
+  overflow: auto;
+
+    }
+
+.float-right{
+  float: right;
+  width: 400px;
+  margin: 0 0 10px 10px;
+  clear: left;
+  overflow: auto;
+
+    }
 
 input[type=text], select {
 /*    width: 80%;
@@ -226,6 +250,7 @@ input[type=text], select {
     margin-left: 5px;
     left: 5px;
     right: 5px;
+  }
 
 .row .col.s12 {
     width: 50%;

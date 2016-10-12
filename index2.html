@@ -14,7 +14,11 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div id="container" >    
+    <header class="input-field col s12">  
+    <img src = "img/crime_scene1.png">  
+    <h1 align="center" class="header">Most Wanted</h1>
+    </header>
+    <div>    
     </div>
     <div id="container">
         <div class="row, div-1">
@@ -24,16 +28,19 @@
                     the person you are looking and if they are found their info
                     will be displayed.</p>
                     <div class="input-field col s3">
-                        <input class="validate" id="first_name" type="text">
-                        <label for="first_name">First Name</label>
+                        <label for="firstName">First Name</label>
+                        <input id="firstName" name="firstName" type="text">
+                        
+
                     </div>
                     <div class="input-field col s3">
-                        <input class="validate" id="last_name" type="text">
-                        <label for="last_name">Last Name</label>
+                        <label for="lastName">Last Name</label>
+                        <input id="lastName" name="firstName" type="text">
+                        
                     </div>
                     <div>
-                        <button class="button" onclick="getChildren()" type=
-                        "button">Search</button>
+                        <button class="button" onclick="getInformation()" type=
+                        "button"> Search</button>
                     </div>
             </div>
             <div class="results" id="targetInfo"></div>
@@ -54,8 +61,7 @@
                     </div>
 
                     <div>
-                        <button class="button" onclick="initSearch()" type=
-                        "button">Search</button>
+                        <button class="button" onclick="getInformation()" type="button">Search</button>
                     </div>
             </div>
             <div class="results" id="targetInfo"></div>
@@ -68,26 +74,29 @@
                 <p class="boxText">Please type the first and last name of the
                 person you are looking and if they are found their info will be
                 displayed.</p>
-                <form>
-                    <label for="firstName">First Name</label><br>
-                    <input id="firstName" name="firstname" type="text"><br>
-                    <label for="lastName">Last Name</label><br>
-                    <input id="lastName" name="lastname" type="text"><br>
-                    <button class="button" onclick="initSearch()" type=
-                    "button">Search</button>
+                <form class="float-left">
+                    <label for="age">Age</label><br>
+                    <input id="age" name="Age" type="text"><br>
+                    <label for="ageRange">Age Range</label><br>
+                    <input id="ageRange" name="ageRange" type="text"><br>
+                    <label for="Height">Height</label><br>
+                    <input id="Height" name="Height" type="text"><br>
+                    <button class="button" onclick="getInformation()" type="button">Search</button>
                 </form>
-            </center>
-        </center>
-    </div>
-     </div>
+
+                <form class="float-right">
+                    <label for="weight">Weight</label><br>
+                    <input id="weight" name="Weight" type="text"><br>
+                    <label for="occupation">Occupation</label><br>
+                    <input id="occupation" name="occupation" type="text"><br>
+                    <label for="eyeColor">Eye Color</label><br>
+                    <input id="eyeColor" name="eyeColor" type="text"><br>
+                </form>
+                <button class="button" onclick="getInformation()" type="button">Search</button>
+            </center>       
+      </div>
+      </div>
     <div class="container">
-        <div class="section">
-            <div class="row">
-                <div>
-                    <h3><i class="mdi-content-send brown-text"></i></h3>
-                </div>
-            </div>
-        </div>
     </div>
     <footer class="page-footer teal">
         <div class="container"></div>
