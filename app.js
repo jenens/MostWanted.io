@@ -243,13 +243,11 @@ var dataObject = [
 "currentSpouse": null}
 ];
 
-// var firstName = "";
-// var lastName = "";
-// firstName = document.getElementById("firstName").value; 
-// lastName = document.getElementById("lastName").value;
+var firstName = "";
+var lastName = "";
+firstName = document.getElementById("firstName").value; 
+lastName = document.getElementById("lastName").value;
 
-
-// TESTED THIS FUNCTION, IT WORKS. 
 function getInformation(firstName, lastName) 
 {
     return dataObject.filter(function(user) 
@@ -258,37 +256,34 @@ function getInformation(firstName, lastName)
     });
 }
 
-
-//TESTED THIS FUNCTION AND IT ALSO WORKS.
 function concatInfo(resultsArray) 
 {
     var informationResults = "";
     for (var i=0; i < resultsArray.length; i++) 
     {
-    informationResults +="<br>ID: " + resultsArray[i]['id'] + "<br> First Name: " + resultsArray[i]['firstName'] + " Last Name: " + 
-        resultsArray[i]['lastName'] + "<br> Gender: " + resultsArray[i]['gender'] + "<br> Date of Birth: " + resultsArray[i]['dob'] + 
-        "<br> Height: " + resultsArray[i]['height'] + " <br>Weight: " + resultsArray[i]['weight'] + " <br>Eye Color: " + resultsArray[i]['eyeColor'] +
-        " <br>Occupation: " + resultsArray[i]['occupation'] + " <br>Parents: " + resultsArray[i]['parents'] + " <br>Current Spouse: " +
-        resultsArray[i]['currentSpouse'];
+        informationResults +="<br>ID: " + resultsArray[i]['id'] + "<br> First Name: " + resultsArray[i]['firstName'] + " Last Name: " + 
+            resultsArray[i]['lastName'] + "<br> Gender: " + resultsArray[i]['gender'] + "<br> Date of Birth: " + resultsArray[i]['dob'] + 
+            "<br> Height: " + resultsArray[i]['height'] + " <br>Weight: " + resultsArray[i]['weight'] + " <br>Eye Color: " + resultsArray[i]['eyeColor'] +
+            " <br>Occupation: " + resultsArray[i]['occupation'] + " <br>Parents: " + resultsArray[i]['parents'] + " <br>Current Spouse: " +
+            resultsArray[i]['currentSpouse'];
     }
-        // console.log(informationResults); <--- used this to see what to put in our test. 
-        return informationResults;
+    // console.log(informationResults); <--- used this to see what to put in our test. 
+    return informationResults;
 }
-    
-//No testing needed, this function only displays information to the html.
+
 function displayResults(informationResults)
 {
-       document.getElementById("targetInfo").innerHTML = informationResults; 
+    document.getElementById("targetInfo").innerHTML = informationResults; 
 }
 
 
 function getChildren(person) 
     {
-            var children = [];
-            var idInfo = person;
-            var idResults = idInfo[0]['id'];
+        var children = [];
+        var idInfo = person;
+        var idResults = idInfo[0]['id'];
 
-       for (var i = 0; i < dataObject.length; i++) 
+        for (var i = 0; i < dataObject.length; i++) 
         {
             console.log (dataObject[i]);
 
@@ -297,11 +292,11 @@ function getChildren(person)
             var secondParentId = dataObject[i].parents[1];
 
             if (idIntoANumber === firstParentId || idIntoANumber === secondParentId) 
-                        {
-                        children.push(dataObject[i]);
-                        }
+            {
+                children.push(dataObject[i]);
+            }
         }
-            return children;
+        return children;
     }
 
 
@@ -321,9 +316,7 @@ function getDescendantsRecursively (idResults)
                         allDescendants.push(dataObject[i].id);
                         getDescendantsRecursively(dataObject[i].id);
                     }
-
             }
         }
-
         return (allDescendants);
 }
