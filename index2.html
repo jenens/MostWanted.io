@@ -24,28 +24,47 @@
 
 
 <div id="container">
-    <div class="div-1">
-        <h5 class="center">What do you want to know about the person? </h5>
+
+<div class="row, div-1">
+    <form class="col 6">
+      <div class="row">
+        <div class="input-field col s3">
+          <input  id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      <div>   <button type="button" class="button" onclick="initSearch()">Search</button> </div>
+      
+      </div>
+
+<!--     <div class="div-1">
+         <h5 class="center">Find a person</h5>
         <center>
-        <p class="boxText"> Use the dropdown to choose which type of imformation you are looking for.</p>
-        <form class="center">
+        <p class="boxText"> Please type the first and last name of the person you are looking and if they are found their info will be displayed.</p>
+        
+
+        <form>
             <label for="firstName">First Name</label><br>
             <input id="firstName" name="firstname" type="text"><br>
             <label for="lastName">Last Name</label><br>
             <input id="lastName" name="lastname" type="text"><br>
             <button type="button" class="button" onclick="initSearch()">Search</button> 
-       </form>
+       </form> -->
 
         <div id="targetInfo" class="results"> 
         </div>
-
     </div>
 
     <div class="div-2">
-        <h5 class="center">Find a person</h5>
+         <h5 class="center">What do you want to know about the person? </h5>
         <center>
-        <p class="boxText"> Please type the first and last name of the person you are looking and if they are found their info will be displayed.</p>
-        <form>
+        <p class="boxText"> Use the dropdown to choose which type of imformation you are looking for.</p>
+        <form class="center">
+
+       
             <label for="firstName">Looking for</label><br>
             <input id="firstName" name="firstname" type="text"><br>
             <button type="button" class="button" onclick="initSearch()">Search</button>
