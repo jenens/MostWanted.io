@@ -21,7 +21,7 @@ var dataObject = [
 "occupation": "assistant",
 "parents": [],
 "currentSpouse": 272822514},
-{   "id": "409574486",  
+{   "id": "409574486",
 "firstName": "Michael",
 "lastName": "Walkens",
 "gender": "male",
@@ -32,7 +32,7 @@ var dataObject = [
 "occupation": "landscaper",
 "parents": [],
 "currentSpouse": 260451248},
-{   "id": "260451248",  
+{   "id": "260451248",
 "firstName": "Jon",
 "lastName": "Walkens",
 "gender": "male",
@@ -245,78 +245,79 @@ var dataObject = [
 
 var firstName = "";
 var lastName = "";
-firstName = document.getElementById("firstName").value; 
+firstName = document.getElementById("firstName").value;
 lastName = document.getElementById("lastName").value;
 
-function getInformation(firstName, lastName) 
+function getInformation(firstName, lastName)
 {
-    return dataObject.filter(function(user) 
-    {
-        return user.firstName == firstName && user.lastName == lastName;       
-    });
+  return dataObject.filter(function(user)
+  {
+    return user.firstName == firstName && user.lastName == lastName;
+  });
 }
 
-function concatInfo(resultsArray) 
-{
-    var informationResults = "";
-    for (var i=0; i < resultsArray.length; i++) 
-    {
-        informationResults +="<br>ID: " + resultsArray[i]['id'] + "<br> First Name: " + resultsArray[i]['firstName'] + " Last Name: " + 
-            resultsArray[i]['lastName'] + "<br> Gender: " + resultsArray[i]['gender'] + "<br> Date of Birth: " + resultsArray[i]['dob'] + 
-            "<br> Height: " + resultsArray[i]['height'] + " <br>Weight: " + resultsArray[i]['weight'] + " <br>Eye Color: " + resultsArray[i]['eyeColor'] +
-            " <br>Occupation: " + resultsArray[i]['occupation'] + " <br>Parents: " + resultsArray[i]['parents'] + " <br>Current Spouse: " +
-            resultsArray[i]['currentSpouse'];
-    }
-    // console.log(informationResults); <--- used this to see what to put in our test. 
-    return informationResults;
+function concatInfo(resultsArray)
+{   
+  var personInfo = getInformation(firstName, lastName);
+  var informationResults = "";
+  for (var i=0; i < personInfo.length; i++)
+  {
+  informationResults +="<br>ID: " + resultsArray[i]['id'] + "<br> First Name: " + resultsArray[i]['firstName'] + " Last Name: " +
+    resultsArray[i]['lastName'] + "<br> Gender: " + resultsArray[i]['gender'] + "<br> Date of Birth: " + resultsArray[i]['dob'] +
+    "<br> Height: " + resultsArray[i]['height'] + " <br>Weight: " + resultsArray[i]['weight'] + " <br>Eye Color: " + resultsArray[i]['eyeColor'] +
+    " <br>Occupation: " + resultsArray[i]['occupation'] + " <br>Parents: " + resultsArray[i]['parents'] + " <br>Current Spouse: " +
+    resultsArray[i]['currentSpouse'];
+  }
+  // console.log(informationResults); <--- used this to see what to put in our test.
+  return informationResults;
 }
 
 function displayResults(informationResults)
 {
-    document.getElementById("targetInfo").innerHTML = informationResults; 
+  document.getElementById("targetInfo").innerHTML = informationResults;
 }
 
 
-function getChildren(person) 
-    {
-        var children = [];
-        var idInfo = person;
-        var idResults = idInfo[0]['id'];
-
-        for (var i = 0; i < dataObject.length; i++) 
-        {
-            console.log (dataObject[i]);
-
-            var idIntoANumber = parseInt(idResults);
-            var firstParentId = dataObject[i].parents[0];
-            var secondParentId = dataObject[i].parents[1];
-
-            if (idIntoANumber === firstParentId || idIntoANumber === secondParentId) 
-            {
-                children.push(dataObject[i]);
-            }
-        }
-        return children;
-    }
-
-
-function getDescendantsRecursively (idResults) 
+function getChildren(person)
 {
-    var allDescendants = [];
-        for (var i = 0; i < dataObject.length; i++) 
-        {
-            if (dataObject[i].parents.length !== 0)
-            {
-                var idIntoAnumber = parseInt(idResults, 10);
-                var firstParentId = dataObject[i].parents[0];
-                var secondParentId = dataObject[i].parents[1];
+  var children = [];
+  var idInfo = person;
+  var idResults = idInfo[0]['id'];
 
-                    if (idIntoAnumber === firstParentId || idIntoAnumber === secondParentId)
-                    {
-                        allDescendants.push(dataObject[i].id);
-                        getDescendantsRecursively(dataObject[i].id);
-                    }
-            }
-        }
-        return (allDescendants);
+  for (var i = 0; i < dataObject.length; i++)
+  {
+    console.log (dataObject[i]);
+
+    var idIntoANumber = parseInt(idResults);
+    var firstParentId = dataObject[i].parents[0];
+    var secondParentId = dataObject[i].parents[1];
+
+    if (idIntoANumber === firstParentId || idIntoANumber === secondParentId)
+    {
+      children.push(dataObject[i]);
+    }
+  }
+  return children;
+}
+
+
+function getDescendantsRecursively (idResults)
+{
+  var allDescendants = [];
+    for (var i = 0; i < dataObject.length; i++)
+    {
+      if (dataObject[i].parents.length !== 0)
+      {
+      var idIntoAnumber = parseInt(idResults, 10);
+      var firstParentId = dataObject[i].parents[0];
+      var secondParentId = dataObject[i].parents[1];
+
+          if (idIntoAnumber === firstParentId || idIntoAnumber === secondParentId)
+          {
+            allDescendants.push(dataObject[i].id);
+            getDescendantsRecursively(dataObject[i].id);
+          }
+      }
+    }
+    return (allDescendants);
 }
