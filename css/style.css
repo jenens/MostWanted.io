@@ -11,9 +11,6 @@ p {
   line-height: 25px;
 }
 
-/*.button-collapse {
-  color: #26a69a;
-}*/
 
 h2{
 margin:2px;
@@ -91,7 +88,7 @@ padding: 5px;
     background-color: white;
     color: #26a69a;
     width: 50%;
-    padding: 2%;
+    padding: 10px;
     flex: 1 1 0;
 }
 
@@ -108,6 +105,39 @@ padding: 5px;
   padding: 10px;
   flex: 100%; 
   order: 3;
+}
+
+
+.select-wrapper input.select-dropdown {
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    outline: none;
+    height: 3rem;
+    line-height: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    margin: 0 0 20px 0;
+    padding: 0;
+    display: block;
+}
+
+.wrapper {
+   position: relative;
+    padding: 50px;
+}
+
+
+.div { 
+ padding: 2px;
+ margin: 2px;
+}
+
+.select-wrapper { 
+    position: relative;
+    padding: 2px !important;
 }
 
 .button{
@@ -128,15 +158,6 @@ padding: 5px;
 
   }
 
-/*@media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: top;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
-}*/
 
 @media only screen and (max-width : 600px) {
   #index-banner .section {
@@ -154,7 +175,6 @@ padding: 5px;
 footer.page-footer {
   margin: 0;
 }
-
 
 
 .teal-text.text-lighten-2 {
@@ -202,6 +222,12 @@ input[type=text], select {
 }
 
 .row .col.s3 {
+    width: 50%;
+    margin-left: 5px;
+    left: 5px;
+    right: 5px;
+
+.row .col.s12 {
     width: 50%;
     margin-left: 5px;
     left: 5px;

@@ -320,3 +320,8 @@ function getDescendantsRecursively (idResults)
         }
         return (allDescendants);
 }
+
+// this is to initialize multiple select dropdown on html page
+  $(document).ready(function() {
+    $('select').material_select();
+  });
