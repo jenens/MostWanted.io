@@ -291,6 +291,24 @@ function getDescendantsRecursively (person)
     return (allDescendants);
 }
 
+//THIS FUNCTION WORKS, PART OF GOAL 5
+function getParents(person)
+{
+    var parents = [];
+    for (var i = 0; i < dataObject.length; i++)
+    {
+        var parentOneIdString = person.parents[0];
+        var parentTwoIdString = person.parents[1];
+        var allObjectsId = parseInt(dataObject[i].id);
+
+        if (parentOneIdString === allObjectsId || parentTwoIdString === allObjectsId)
+        {
+            parents.push(dataObject[i]); 
+        }
+    }
+    
+    return parents;
+}
 
 
 //THIS FUNCTION WORKS, PART OF GOAL 5
@@ -316,6 +334,9 @@ function getSiblings(person)
     }
     return siblings;
 }
+//THIS IS THE CALL FOR ABOVE FUNCTION. REMINDER TO PASS GETINFORMATION() INTO THE PARAMETERS OF THE CALL TO MAKE FUNCTION WORK. 
+// getSiblings(getInformation(firstName, lastName));
+
 
 //THIS FUNCTION WORKS, IS PART OF GOAL 5
 function getSpouse(person)
