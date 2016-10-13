@@ -56,10 +56,6 @@ padding: 5px;
 }
 
 
-/*#container {
-     position: absolute;
-}*/
-
 #container {
   display: flex;
   flex-direction: row;
@@ -121,13 +117,6 @@ padding: 5px;
     padding: 50px;
 }
 
-/*
-.div { 
- padding: 2px;
- margin: 2px;
- max-width: 500px;
-}
-*/
 .select-wrapper { 
     position: relative;
     padding: 2px !important;
@@ -170,10 +159,6 @@ footer.page-footer {
 }
 
 
-.teal-text.text-lighten-2 {
-  color: white !important;
-}
-
 .dropdown {
   position: relative;
   display: inline-block;
@@ -191,11 +176,6 @@ footer.page-footer {
 }
 
 
-/*.wrapper { 
-  border : 2px solid #000; 
-  overflow:hidden;
-}
-*/
 .wrapper div {
    min-height: 100px;
    padding: 10px;
@@ -203,60 +183,30 @@ footer.page-footer {
 
 .one {
   float:left; 
-  width: 50%;
+  width: 450px;
   margin: auto;
   clear: left;
  
 }
 .two { 
   float: right;
-  width: 50%
+  width: 450px;
   margin: auto;
   clear: right;
 }
 
 .three { 
   float: auto;
+  clear: both;
 
 }
 
 
-
 input[type=text], select {
-/*    width: 80%;
-    padding: 5px 5px;
-    margin: 5px 0;
-    display: relative;
-    border: 1px solid #ccc;
-    border-radius: 4px;*/
     box-sizing: border-box;
     font-size: 14px;
 }
 
-/*.row .col.s3 {
-    width: 50%;
-    margin-left: 5px;
-    left: 5px;
-    right: 5px;
-  }
-
-.row .col.s12 {
-    width: 50%;
-    margin-left: 5px;
-    left: 5px;
-    right: 5px;
-}*/
-
-/*input[type=submit] {
-    width: 25%;
-    background-color: #26a69a; 
-    color: white;
-    padding: 5px 5px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}*/
 
 input[type=submit]:hover {
     background-color: #2bbbad;
@@ -274,14 +224,4 @@ footer {
 
 }
 
-/*.centered-search{
-width:200px;
-height:50px;
-margin:auto;
-position:absolute;
-top:0;
-bottom:0;
-right:0;
-left:0;       
-}*/
 
