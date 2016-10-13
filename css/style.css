@@ -1,11 +1,3 @@
-/* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
-
 
 p {
   line-height: 25px;
@@ -21,7 +13,7 @@ padding: 5px;
 .header{
   font-size: 50px;
   font-weight: 400;
-  color: #26a69a;
+  color: black;
 }
 
 
@@ -76,18 +68,18 @@ padding: 5px;
 
 #container div {
   padding:10px;
-  margin: 30px; 
+  margin: 10px; 
 }
 
 .div-1, .div-2 {
     border: 1px solid #26a69a;
     margin: 3px 0;
     text-align: center;
-    line-height: 20px;
+    line-height: 5px;
     font-size: 28px;
     background-color: white;
     color: #26a69a;
-    width: 50%;
+    width: 500px;
     padding: 10px;
     flex: 1 1 0;
 }
@@ -97,7 +89,7 @@ padding: 5px;
   border: 1px solid #26a69a;
   margin: 3px 0;
   text-align: center;
-  line-height: 50px;
+  line-height: 5px;
   font-size: 28px;
   background-color: white;
   color: #26a69a;
@@ -129,25 +121,25 @@ padding: 5px;
     padding: 50px;
 }
 
-
+/*
 .div { 
  padding: 2px;
  margin: 2px;
- max-width: 1000px;
+ max-width: 500px;
 }
-
+*/
 .select-wrapper { 
     position: relative;
     padding: 2px !important;
 }
 
 .button{
-  width: 60px;
-  height: 30px;
-  font-size: 12px;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
   border-radius: 4px;
-  background-color: white;
-  color: #26a69a;
+  background-color: #26a69a;
+  color: white;
 
 
 }
@@ -159,12 +151,6 @@ padding: 5px;
 
   }
 
-/*.input-field {
-  width: 300px;
-  height: 30px;
-  font-size: 12px;
-  margi*/n: 5px;
-}
 
 @media only screen and (max-width : 600px) {
   #index-banner .section {
@@ -198,41 +184,43 @@ footer.page-footer {
   display: inline-block;
 }
 
-.dropdown-content-hamburger {
-  background-color: #000000;
-  margin: 0;
-  display: none;
-  min-width: 100px;
-  max-height: 650px;
-  overflow-y: auto;
-  opacity: 0;
-  position: absolute;
-  z-index: 999;
-  will-change: width, height;
-}
 
 .brown-text {
   color: #26a69a !important; 
   position: top;
 }
 
-.float-left{
-  float: left;
-  width: 400px;
-  margin: 0 0 10px 10px;
+
+/*.wrapper { 
+  border : 2px solid #000; 
+  overflow:hidden;
+}
+*/
+.wrapper div {
+   min-height: 100px;
+   padding: 10px;
+}
+
+.one {
+  float:left; 
+  width: 50%;
+  margin: auto;
   clear: left;
-  overflow: auto;
-
-    }
-
-.float-right{
+ 
+}
+.two { 
   float: right;
-  width: 400px;
-  margin: 0 0 10px 10px;
-  clear: left;
-  overflow: auto;
+  width: 50%
+  margin: auto;
+  clear: right;
+}
 
-    }
+.three { 
+  float: auto;
+
+}
+
+
 
 input[type=text], select {
 /*    width: 80%;
@@ -245,7 +233,7 @@ input[type=text], select {
     font-size: 14px;
 }
 
-.row .col.s3 {
+/*.row .col.s3 {
     width: 50%;
     margin-left: 5px;
     left: 5px;
@@ -257,9 +245,9 @@ input[type=text], select {
     margin-left: 5px;
     left: 5px;
     right: 5px;
-}
+}*/
 
-input[type=submit] {
+/*input[type=submit] {
     width: 25%;
     background-color: #26a69a; 
     color: white;
@@ -268,7 +256,7 @@ input[type=submit] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
+}*/
 
 input[type=submit]:hover {
     background-color: #2bbbad;
@@ -285,22 +273,6 @@ footer {
   max-width: 100%;
 
 }
-/*ul{
-  position:relative;
-  display: center;  
-  list-style: none;
-  width:100%;
-  text-align: center;
-  margin: auto;
-}
-
-li{
-  list-style: none;
-  text-align: inline-block;
-  margin: 15px; 
-  display: inline-block; 
-}*/
-
 
 /*.centered-search{
 width:200px;
@@ -313,8 +285,3 @@ right:0;
 left:0;       
 }*/
 
-/*div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}*/
