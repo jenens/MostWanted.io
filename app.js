@@ -390,7 +390,7 @@ function concatInfo()
     return informationResults;
 }
 
-//THIS FUNCTION SHOULD BE ABLE TO ACTUALLY DISPLAY THE RESULTS FROM CONCATINFO TO THE HTML PAGE, MAY NEED WORK. 
+//THIS FUNCTION SHOULD BE ABLE TO ACTUALLY DISPLAY THE RESULTS FROM CONCATINFO TO THE HTML PAGE, NEEDS WORK. 
 function displayResults(informationResults)
 {
     document.getElementById("targetInfo").innerHTML = informationResults;
