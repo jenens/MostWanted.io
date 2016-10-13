@@ -270,7 +270,7 @@ function getInformation(firstName, lastName)
 }
 
 //THIS FUNCTION NEEDS WORK, IS GOAL 4
-function getDescendantsRecursively (idResults)
+function getDescendantsRecursively (person)
 {
     var allDescendants = [];
     for (var i = 0; i < dataObject.length; i++)
