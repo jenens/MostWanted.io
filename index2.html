@@ -14,91 +14,87 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header class="input-field col s12">  
-    <img src = "img/crime_scene1.png">  
-    <h1 align="center" class="header">Most Wanted</h1>
+    <header class="input-field col s12">
+        <img src="img/crime_scene1.png">
+        <h1 align="center" class="header"><STRONG>Most Wanted Database</STRONG></h1>
     </header>
-    <div>    
-    </div>
+    <div></div>
     <div id="container">
-        <div class="row, div-1">
-            <div class= div>
-                <h5 class="center">Find a person</h5>
-                    <p class="boxText">Please type the first and last name of
-                    the person you are looking and if they are found their info
-                    will be displayed.</p>
-                    <div class="input-field col s3">
-                        <label for="firstName">First Name</label>
-                        <input id="firstName" name="firstName" type="text">
-                        
-
-                    </div>
-                    <div class="input-field col s3">
-                        <label for="lastName">Last Name</label>
-                        <input id="lastName" name="firstName" type="text">
-                        
-                    </div>
-                    <div>
-                        <button class="button" onclick="getInformation()" type=
-                        "button"> Search</button>
-                    </div>
+        <div class="div-1">
+            <div class="div">
+                <h5>Find a person</h5>
+                <p class="boxText">Please type the first and last name of the person you
+                are looking and if they are found their info will be displayed.</p>
+                <div>
+                    <label for="firstName">First Name</label> <input id="firstName" name="firstName" type="text" placeholder="Billy">
+                </div>
+                <div>
+                    <label for="lastName">Last Name</label> <input id="lastName" name="firstName" type="text" placeholder="Bob">
+                </div>
+                <div>
+                    <button class="button" onclick="getInformation()" type="button">Search</button>
+                </div>
             </div>
             <div class="results" id="targetInfo"></div>
         </div>
-
-        <div class="row, div-1">
+        <div class="div-2">
             <div>
                 <h5 class="center">What do you want to know about this person?</h5>
-                    <p class="boxText">Choose an option from the drowpdown to search for Decendnats, Immediate Family or Next of Kin</p>
-                    
-                    <div class = wrapper class="input-field col s12">
-                      <select multiple>
+                <p class="boxText">Choose an option from the drowpdown to search for
+                Decendnats, Immediate Family or Next of Kin</p>
+                <div class="input-field col s12">
+                    <select multiple>
                         <option value="" disabled selected>Choose your option</option>
-                        <option value="1">Descendants</option>
-                        <option value="2">Immediate Family</option>
-                        <option value="3">Next of Kin</option>
-                      </select>
-                    </div>
-
-                    <div>
-                        <button class="button" onclick="getInformation()" type="button">Search</button>
-
-                    </div>
+                        <option value="1">
+                            Descendants
+                        </option>
+                        <option value="2">
+                            Immediate Family
+                        </option>
+                        <option value="3">
+                            Next of Kin
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <button class="button" onclick="getInformation()" type="button">Search</button>
+                </div>
             </div>
             <div class="results" id="targetInfo"></div>
         </div>
-    
-    <div class="div-3">
-        <center>
-            <h5 class="center">Find a person</h5>
-            <center>
-                <p class="boxText">Please type the first and last name of the
-                person you are looking and if they are found their info will be
-                displayed.</p>
-                <form class="float-left">
-                    <label for="age">Age</label><br>
-                    <input id="age" name="Age" type="text"><br>
-                    <label for="ageRange">Age Range</label><br>
-                    <input id="ageRange" name="ageRange" type="text"><br>
-                    <label for="Height">Height</label><br>
-                    <input id="Height" name="Height" type="text"><br>
-                    <button class="button" onclick="getInformation()" type="button">Search</button>
-                </form>
-
-                <form class="float-right">
-                    <label for="weight">Weight</label><br>
-                    <input id="weight" name="Weight" type="text"><br>
-                    <label for="occupation">Occupation</label><br>
-                    <input id="occupation" name="occupation" type="text"><br>
-                    <label for="eyeColor">Eye Color</label><br>
-                    <input id="eyeColor" name="eyeColor" type="text"><br>
-                </form>
+        <div class="div-3">
+            <h5>Choose caracteristics of a person</h5>
+            <p class="boxText">Choose the characteristics of the perosn you are looking
+            for to search</p>
+            <div class="one">
+                <div>
+                    <label for="age">Age</label> <input id="age" name="age" type="text" placeholder="25">
+                </div>
+                <div>
+                    <label for="ageRange">Age Range</label> <input id="ageRange" name="ageRange" type="text" placeholder="25-30">
+                </div>
+                <div>
+                    <label for="height">Height</label> <input id="height" name="height" type="text" placeholder='75"'>
+                </div>
+            </div>
+            <div class="two">
+                <div>
+                    <label for="weight">Weight</label> <input id="weight" name="weight" type="text" placeholder="195">
+                </div>
+                <div>
+                    <label for="occupation">Occupation</label> <input id="occupation" name="occupation" type="text" placeholder="teacher">
+                </div>
+                <div>
+                    <label for="eyeColor">Eye Color</label> <input id="eyeColor" name="eyeColor" type="text" placeholder="blue">
+                </div>
+            </div>
+            <div class="three">
                 <button class="button" onclick="getInformation()" type="button">Search</button>
-            </center>       
-      </div>
-      </div>
-    <div class="container">
+            </div class="three">
+            <div class="results" id="targetInfo"></div>
+        </div>
     </div>
+    <div class="container"></div>
     <footer class="page-footer teal">
         <div class="container"></div>
         <div class="footer-copyright">
