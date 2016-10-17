@@ -364,8 +364,14 @@ function getChildren(person){
     return children;
 }
 
+//not sure if this function works, test out later.
 function getImmediateFamily(person){
-
+  var parents = getParents(person);
+  var siblings = getSiblings(person);
+  var spouse = getSpouse(person);
+  var children = getChildren(person);
+  var immediateFamily = parents + siblings + spouse + children;
+  return immediateFamily;
 }
 
 function getOldestPerson(people){
