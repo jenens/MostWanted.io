@@ -242,38 +242,30 @@ var dataObject = [
 "parents": [313207561,313997561],
 "currentSpouse": null}
 ];
-// var firstName = document.getElementById("firstName");
-// var lastName = document.getElementById("lastName");
-function getFirstNameParam(elementId)
-{
+
+function getFirstNameParam(elementId){
     return document.getElementById(elementId).value;
 }
-function getLastNameParam(elementId)
-{
+function getLastNameParam(elementId){
     return document.getElementById(elementId).value;
 }
-//----------------------------------------------------------------------------------------
-function printListToPage(output, elementId)
-{
+
+function printListToPage(output, elementId){
     document.getElementById(elementId).innerHTML = output;
 }
-//------------------------------------------------------------------------------------------
 //THIS FUNCTION PRINTS JUST THE NAMES
-function printNamesOf(people)
-{
-    return people.map(function(person)
-    {
+function printNamesOf(people){
+    var names = people.map(function(person){
         return person.firstName + " " + person.lastName;
     }).toString();
+    return names;
 }
-//------------------------------------------------------------------------------------------
-function getOutputFor(people)
-{
+
+function getOutputFor(people){
     return people.map(markup).join("");
 }
-//----------------------------------------------------------------------------------------
-function markup(person)
-{
+
+function markup(person){
   if (person == null){
     return "<div>There are no results.</div>";
   }
@@ -288,34 +280,24 @@ function markup(person)
     output += "<p> Current Spouse: " + person.currentSpouse + "</p>";
     return output;
 }
-//-------------------------------------------------------------------------------------
 //THIS CALL PRINTS RESULTS OF OTHER FUNCTIONS TO PAGE        THIS NUMBER IN DATAOBJECT REFERS TO JOY MADDEN
 // printListToPage(printNamesOf(getDescendantsRecursively(dataObject[9], dataObject)));
-//-------------------------------------------------------------------------------------------------------------
-//THIS FUNCTION WORKS, GOAL 2 COMPLETE
-function getInformation(firstName, lastName)
-{
-    for(var i = 0; i < dataObject.length; i++)
-    {
-        if (firstName == dataObject[i].firstName && lastName == dataObject[i].lastName)
-        {
+
+function getInformation(firstName, lastName){
+    for(var i = 0; i < dataObject.length; i++){
+        if (firstName == dataObject[i].firstName && lastName == dataObject[i].lastName){
             return(dataObject[i]);
         }
     }
 }
-//--------------------------------------------------------------------------------------------------------------
-//THIS FUNCTION WORKS, GOAL 4 COMPLETE
-function getDescendantsRecursively (person, everyone, allDescendants = [])
-{
-    for (var i = 0; i < dataObject.length; i++)
-    {
-        if (dataObject[i].parents.length !== 0)
-        {
+
+function getDescendantsRecursively (person, everyone, allDescendants = []){
+    for (var i = 0; i < everyone.length; i++){
+        if (everyone[i].parents.length !== 0){
             var id = person.id;
             var firstParentId = everyone[i].parents[0];
             var secondParentId = everyone[i].parents[1];
-            if (id == firstParentId || id == secondParentId)
-            {
+            if (id == firstParentId || id == secondParentId){
                 allDescendants.push(everyone[i]);
                 getDescendantsRecursively(everyone[i], everyone, allDescendants);
             }
@@ -325,40 +307,31 @@ function getDescendantsRecursively (person, everyone, allDescendants = [])
 }
 // Call for Recursive Function
 // getDescendantsRecursively(dataObject[9], dataObject);
-//------------------------------------------------------------------------------------------------------------
-//THIS FUNCTION WORKS, PART OF GOAL 5
-function getParents(person)
-{
+
+function getParents(person){
     var parents = [];
-    for (var i = 0; i < dataObject.length; i++)
-    {
+    for (var i = 0; i < dataObject.length; i++){
         var parentOneIdString = person.parents[0];
         var parentTwoIdString = person.parents[1];
         var allObjectsId = parseInt(dataObject[i].id);
-        if (parentOneIdString === allObjectsId || parentTwoIdString === allObjectsId)
-        {
+        if (parentOneIdString === allObjectsId || parentTwoIdString === allObjectsId){
             parents.push(dataObject[i]);
         }
     }
     return parents;
 }
-//-------------------------------------------------------------------------------------------------------------
-//THIS FUNCTION WORKS, PART OF GOAL 5
-function getSiblings(person)
-{
+
+function getSiblings(person){
     var siblings = [];
-    for (var i = 0; i < dataObject.length; i++)
-    {
+    for (var i = 0; i < dataObject.length; i++){
         var personsFirstParent = person.parents[0];
         var allObjectsFirstParent= dataObject[i].parents[0];
         var personsSecondParent = person.parents[1];
         var allObjectsSecondParent = dataObject[i].parents[1];
-        if (person.id === dataObject[i].id)
-        {
+        if (person.id === dataObject[i].id){
             //do nothing
         }
-        else if (personsFirstParent === allObjectsFirstParent || personsSecondParent === allObjectsSecondParent)
-        {
+        else if (personsFirstParent === allObjectsFirstParent || personsSecondParent === allObjectsSecondParent){
             siblings.push(dataObject[i]);
         }
     }
@@ -366,37 +339,33 @@ function getSiblings(person)
 }
 //THIS IS THE CALL FOR ABOVE FUNCTION. REMINDER TO PASS GETINFORMATION() INTO THE PARAMETERS OF THE CALL TO MAKE FUNCTION WORK.
 // getSiblings(getInformation(firstName, lastName));
-//--------------------------------------------------------------------------------------------------------------------------------
-//THIS FUNCTION WORKS, IS PART OF GOAL 5
-function getSpouse(person)
-{
-    for (var i = 0; i < dataObject.length; i++)
-    {
+
+function getSpouse(person){
+    for (var i = 0; i < dataObject.length; i++){
         var idIntoANumber = parseInt(person.id);
         var currentSpouseId = dataObject[i].currentSpouse;
-        if (idIntoANumber === currentSpouseId)
-        {
+        if (idIntoANumber === currentSpouseId){
             return (dataObject[i]);
         }
     }
     return null;
 }
-//----------------------------------------------------------------------------------------------------------------
-//THIS FUNCTION WORKS, IS PART OF GOAL 5
-function getChildren(person)
-{
+
+function getChildren(person){
     var children = [];
-    for (var i = 0; i < dataObject.length; i++)
-    {
+    for (var i = 0; i < dataObject.length; i++){
         var idIntoANumber = parseInt(person.id);
         var firstParentId = dataObject[i].parents[0];
         var secondParentId = dataObject[i].parents[1];
-        if (idIntoANumber === firstParentId || idIntoANumber === secondParentId)
-        {
+        if (idIntoANumber === firstParentId || idIntoANumber === secondParentId){
             children.push(dataObject[i]);
         }
     }
     return children;
+}
+
+function getImmediateFamily(person){
+
 }
 
 function getOldestPerson(people){
@@ -442,40 +411,47 @@ function getAge(dateString) {
     }
     return age;
 }
-//Link for above function
-//http://stackoverflow.com/questions/4060004/calculate-age-in-javascript
-function getPersonByFilter(age, range, height, weight, occupation, eyecolor)
-{
-  //potentially return an array of people/person.
+//Link for above function = http://stackoverflow.com/questions/4060004/calculate-age-in-javascript
+
+function getPersonByFilter(age, range, height, weight, occupation, eyecolor){
   var people = dataObject;
-  if (age !== null)
-  {
-    people.filter(function(person)
-    {
+  if (age !== null){
+    people.filter(function(person){
       return getAge(person.dob) == age;
     });
   }
-  // if (range !== null)
-  // {
-  //   people.filter(function(person)
-  //   {
-  //     return
-  //   })
-  // }
+  if (range !== null){
+    people.filter(function(person){
+      return getAge(person.dob) == range;
+    });
+  }
+  if (height !== null){
+    people.filter(function(person){
+      return person.height == range;
+    });
+  }
+  if (weight !== null){
+    people.filter(function(person){
+      return person.weight == weight;
+    });
+  }
+  if (occupation !== null){
+    people.filter(function(person){
+      return person.occupation == occupation;
+    });
+  }
+  if (eyecolor !== null){
+    people.filter(function(person){
+      return person.occupation == occupaton;
+    });
+  }
 }
 
-//--------------------------------------------------------------------------------------------------------------
-//var query is a list of all attributes of a person, then query.eyecolor is eyecolor of a
-//person
-//check if they filled in an eye color, then check if there's a match
-//---------------------------------------------------------------------------------------------------------------------------------
 //THIS FUNCTION SHOULD BE ABLE TO CONCAT THE RESULTS OF ALL PREVIOUS FUNCTIONS TO GET IT READY TO BE DISPLAYED, NEEDS WORK.
-function concatInfo()
-{
+function concatInfo(){
     var personInfo = getInformation(firstName, lastName);
     var informationResults = "";
-    for (var i=0; i < personInfo.length; i++)
-    {
+    for (var i=0; i < personInfo.length; i++){
         informationResults +="<br>ID: " + resultsArray[i]['id'] + "<br> First Name: " + resultsArray[i]['firstName'] + " Last Name: " +
         resultsArray[i]['lastName'] + "<br> Gender: " + resultsArray[i]['gender'] + "<br> Date of Birth: " + resultsArray[i]['dob'] +
         "<br> Height: " + resultsArray[i]['height'] + " <br>Weight: " + resultsArray[i]['weight'] + " <br>Eye Color: " + resultsArray[i]['eyeColor'] +
@@ -485,15 +461,13 @@ function concatInfo()
     // console.log(informationResults); <--- used this to see what to put in our test.
     return informationResults;
 }
-//------------------------------------------------------------------------------------------------------------------------------------------
+
 //THIS FUNCTION SHOULD BE ABLE TO ACTUALLY DISPLAY THE RESULTS FROM CONCATINFO TO THE HTML PAGE, NEEDS WORK.
-function displayResults(informationResults)
-{
+function displayResults(informationResults){
     document.getElementById("targetInfo").innerHTML = informationResults;
 }
-//---------------------------------------------------------------------------------------------------------------------------------------------
+
 // this is to initialize multiple select dropdown on html page
-$(document).ready(function()
-{
+$(document).ready(function(){
     $('select').material_select();
 });

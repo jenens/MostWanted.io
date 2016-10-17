@@ -26,9 +26,7 @@
                 <div>
                     <label for="lastName">Last Name</label> <input id="lastName1" name="firstName" type="text" placeholder="ex: Bob">
                 </div>
-                <div>
-                    <button class="button" onclick="printListToPage(markup(getInformation(getFirstNameParam(), getLastNameParam())), 'targetInfo1')" type="button">Search</button>
-                </div>
+                <div><button class="button" onclick="printListToPage(markup(getInformation(getFirstNameParam('firstName1'), getLastNameParam('lastName1'))), 'targetInfo1')" type="button">Search</button></div>
                 <div class="results" id="targetInfo1"></div>
             </div>
         </div>
@@ -44,7 +42,7 @@
                     <label for="lastName">Last Name</label> <input id="lastName2" name="firstName" type="text" placeholder="ex: Bob">
                 </div>
                 <div>
-                    <button class="button" onclick="printListToPage(markup(getDescendantsRecursively(getInformation(getFirstNameParam(), getLastNameParam()), dataObject, allDescendants = [])), 'targetInfo1')" type="button">Search</button>
+                    <button class="button" onclick="printListToPage(printNamesOf(getDescendantsRecursively(getInformation(getFirstNameParam('firstName2'), getLastNameParam('lastName2')), dataObject)), 'targetInfo2')" type="button">Search</button>
                 </div>
                 <div class="results" id="targetInfo2"></div>
             </div>
