@@ -285,7 +285,7 @@ function markup(person){
 
 function getInformation(firstName, lastName){
     for(var i = 0; i < dataObject.length; i++){
-        if (firstName == dataObject[i].firstName && lastName == dataObject[i].lastName){
+        if (firstName === dataObject[i].firstName && lastName === dataObject[i].lastName){
             return(dataObject[i]);
         }
     }
@@ -318,37 +318,44 @@ function getParents(person){
             parents.push(dataObject[i]);
         }
     }
-    return parents;
+    if (parents.length === 0){
+      return "Parents: This person has no parents.";
+    }else{
+      return parents;
+    }
 }
 
 function getSiblings(person){
-    var siblings = [];
-    for (var i = 0; i < dataObject.length; i++){
-        var personsFirstParent = person.parents[0];
-        var allObjectsFirstParent= dataObject[i].parents[0];
-        var personsSecondParent = person.parents[1];
-        var allObjectsSecondParent = dataObject[i].parents[1];
-        if (person.id === dataObject[i].id){
-            //do nothing
-        }
-        else if (personsFirstParent === allObjectsFirstParent || personsSecondParent === allObjectsSecondParent){
-            siblings.push(dataObject[i]);
+    let siblings = [];
+    for (i=0;i<dataObject.length;i++){
+      if (person.parents.length === 0){
+        return "Siblings: This person has no siblings.";
+      }else if (person.id === dataObject[i].id){
+          //do nothing
+      }else if (person.parents[0] === dataObject[i].parents[0] || person.parents[1] === dataObject[i].parents[1]){
+          siblings.push(dataObject[i]);
         }
     }
-    return siblings;
-}
+    if (siblings.length === 0){
+      return "Siblings: This person has no siblings.";
+    }
+    else{
+      return siblings;
+    }
+  }
 //THIS IS THE CALL FOR ABOVE FUNCTION. REMINDER TO PASS GETINFORMATION() INTO THE PARAMETERS OF THE CALL TO MAKE FUNCTION WORK.
 // getSiblings(getInformation(firstName, lastName));
 
 function getSpouse(person){
     for (var i = 0; i < dataObject.length; i++){
-        var idIntoANumber = parseInt(person.id);
-        var currentSpouseId = dataObject[i].currentSpouse;
-        if (idIntoANumber === currentSpouseId){
-            return (dataObject[i]);
+        if (person.id == person.currentSpouse){
+          return 'This person is married to themself.';
+        }
+        else if (person.id == dataObject[i].currentSpouse){
+            return dataObject[i];
         }
     }
-    return null;
+    // return null;
 }
 
 function getChildren(person){
@@ -361,17 +368,22 @@ function getChildren(person){
             children.push(dataObject[i]);
         }
     }
-    return children;
+    if (children.length === 0){
+      return "Children: This person has no children.";
+    } else{
+      return children;
+    }
 }
 
-//not sure if this function works, test out later.
-function getImmediateFamily(person){
-  var parents = getParents(person);
-  var siblings = getSiblings(person);
-  var spouse = getSpouse(person);
-  var children = getChildren(person);
-  var immediateFamily = parents + siblings + spouse + children;
-  return immediateFamily;
+
+function getImmediateFamily(firstName, lastName){
+  let immediateFamily = [];
+  let parents = printParents(getParents(getInformation(firstName, lastName)));
+  let siblings = printSiblings(getSiblings(getInformation(firstName, lastName)));
+  let spouse = printSpouse(getSpouse(getInformation(firstName, lastName)));
+  let children = printChildren(getChildren(getInformation(firstName, lastName)));
+  immediateFamily.push(parents + ' ' + siblings + ' ' + spouse + ' ' + children);
+  return immediateFamily.join('.');
 }
 
 function getOldestPerson(people){
@@ -472,6 +484,77 @@ function concatInfo(){
 function displayResults(informationResults){
     document.getElementById("targetInfo").innerHTML = informationResults;
 }
+
+function printParents(parents){
+  let label = "Parents: ";
+  let listOfParents = [];
+  for(i=0;i<parents.length;i++){
+    listOfParents.push(parents[i].firstName + ' ' + parents[i].lastName + ",");
+  }if (listOfParents.length > 2){
+    return "This person has no parents.";
+  }else{
+  return label+listOfParents.join(' ');
+  }
+}
+
+function printSiblings(siblings){
+  let label = "Siblings: ";
+  let listOfSiblings = [];
+  if (siblings == 'Siblings: This person has no siblings.'){
+    return "This person has no siblings.";
+  }else {
+    for(i=0;i<siblings.length;i++){
+      listOfSiblings.push(siblings[i].firstName + ' ' + siblings[i].lastName + ",");
+    }
+  return label+listOfSiblings.join(' ');
+  }
+}
+
+function printSpouse(spouse){
+	let label = "Spouse: ";
+  if (spouse === null){
+    return "This person is not married.";
+  }
+	else if (spouse.currentSpouse === null) {
+		return label+"This person is not married.";
+	}else if (spouse.id == spouse.currentSpouse){
+		return label+"This person is married to themself.";
+  }
+    else if (spouse == 'This person is married to themself.'){
+      return label+"This person is married to themself.";
+    }
+	else{
+	return label+spouse.firstName+" "+spouse.lastName+'.';
+	}
+}
+
+function printChildren(children){
+	let label = "Children: ";
+	let listOfChildren = [];
+  if (children == 'Children: This person has no children.'){
+    return "This person has no children.";
+  }else{
+	for(i=0; i < children.length; i++){
+		listOfChildren.push(children[i].firstName + ' ' + children[i].lastName + ",");
+	}
+	return label+listOfChildren.join(' ');
+  }
+}
+//THIS IS THE CALL TO PRETTY PRINT ALL IMMEDIATE FAMILY
+// console.log(getImmediateFamily("", "Madden"));
+
+//THIS IS THE CALL TO PRETTY PRINT CHILDREN
+// console.log(printChildren(getChildren(getInformation("Joey", "Madden"))));
+
+//THIS IS THE CALL TO PRETTY PRINT SPOUSE
+// console.log(printSpouse(getSpouse(getInformation("Billy", "Bob"))));
+
+//THIS IS THE CALL TO PRETTY PRINT SIBLINGS
+// console.log(printSiblings(getSiblings(getInformation("Billy", "Bob"))));
+
+//THIS IS THE CALL TO PRETTY PRINT PARENTS
+// console.log(printParents(getParents(getInformation("Ralph", "Bob"))));
+
 
 // this is to initialize multiple select dropdown on html page
 $(document).ready(function(){

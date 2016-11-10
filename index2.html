@@ -1,137 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" name="viewport">
-    <title>devCodeCamp &middot; Most Wanted</title>
-    <link href="LICENSE.txt" rel="license"><!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/materialize.css" media="screen,projection" rel="stylesheet" type="text/css">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" name="viewport">
+  <title>devCodeCamp &middot; Most Wanted</title>
+  <link href="LICENSE.txt" rel="license">
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" media="screen,projection" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-    <header class="input-field col s12">
-        <img src="img/crime_scene1.png">
-        <h1 align="center" class="header"><STRONG>Most Wanted Database</STRONG></h1>
-    </header>
+  <header class="input-field col s12">
+    <img src="img/crime_scene1.png">
+    <h1 align="center" class="header"><STRONG>Most Wanted Database</STRONG></h1>
+  </header>
     <div id="container">
 
-        <div class="div-3">
-            <div class="div">
-                <h5>Find a Person's Information</h5>
-                <p class="boxText">Please type the first and last name of the person you are looking for.</p>
-                <div>
-                    <label for="firstName">First Name</label> <input id="firstName1" name="firstName" type="text" placeholder="ex: Billy">
-                </div>
-                <div>
-                    <label for="lastName">Last Name</label> <input id="lastName1" name="firstName" type="text" placeholder="ex: Bob">
-                </div>
-                <div><button class="button" onclick="printListToPage(markup(getInformation(getFirstNameParam('firstName1'), getLastNameParam('lastName1'))), 'targetInfo1')" type="button">Search</button></div>
-                <div class="results" id="targetInfo1"></div>
+      <div class="div-3">
+        <div class="div">
+          <h5>Find a Person's Information</h5>
+          <p class="boxText">Please type the first and last name of the person you are looking for.</p>
+          <div>
+            <label for="firstName">First Name</label> <input id="firstName1" name="firstName" type="text" placeholder="ex: Billy">
+          </div>
+          <div>
+            <label for="lastName">Last Name</label> <input id="lastName1" name="firstName" type="text" placeholder="ex: Bob">
+          </div>
+          <div><button class="button" onclick="printListToPage(markup(getInformation(getFirstNameParam('firstName1'), getLastNameParam('lastName1'))), 'targetInfo1')" type="button">Search</button></div>
+            <div class="results" id="targetInfo1"></div>
+          </div>
+      </div>
+
+      <div class="div-3">
+        <div class="div">
+          <h5>Find a Person's Descendants</h5>
+          <p class="boxText">Please type the first and last name of the person whose descendants you are looking for.</p>
+          <div>
+            <label for="firstName">First Name</label> <input id="firstName2" name="firstName" type="text" placeholder="ex: Billy">
+          </div>
+          <div>
+            <label for="lastName">Last Name</label> <input id="lastName2" name="firstName" type="text" placeholder="ex: Bob">
+          </div>
+          <div>
+            <button class="button" onclick="printListToPage(printNamesOf(getDescendantsRecursively(getInformation(getFirstNameParam('firstName2'), getLastNameParam('lastName2')), dataObject)), 'targetInfo2')" type="button">Search</button>
+          </div>
+            <div class="results" id="targetInfo2"></div>
+        </div>
+      </div>
+
+      <div class="div-3">
+        <div class="div">
+          <h5>Find a Person's Immediate Family</h5>
+          <p class="boxText">Please type the first and last name of the person you are looking for.</p>
+          <div>
+            <label for="firstName">First Name</label> <input id="firstName3" name="firstName" type="text" placeholder="ex: Billy">
+          </div>
+          <div>
+            <label for="lastName">Last Name</label> <input id="lastName3" name="firstName" type="text" placeholder="ex: Bob">
+          </div>
+          <div>
+            <button class="button" onclick="printListToPage(getImmediateFamily(getFirstNameParam('firstName3'), getLastNameParam('lastName3')), 'targetInfo3')" type="button">Search</button>
+          </div>
+          <div class="results" id="targetInfo3"></div>
+        </div>
+      </div>
+
+      <div class="div-3">
+        <div class="div">
+          <h5>Find a Person's Next of Kin</h5>
+          <p class="boxText">Please type the first and last name of the person you are looking for.</p>
+          <div>
+            <label for="firstName">First Name</label> <input id="firstName4" name="firstName" type="text" placeholder="ex: Billy">
+          </div>
+          <div>
+            <label for="lastName">Last Name</label> <input id="lastName4" name="firstName" type="text" placeholder="ex: Bob">
+          </div>
+          <div>
+            <button class="button" onclick="printListToPage(markup(getNextOfKin(getInformation(getFirstNameParam('firstName4'), getLastNameParam('lastName4')))), 'targetInfo4')" type="button">Search</button>
+          </div>
+            <div class="results" id="targetInfo4"></div>
+        </div>
+      </div>
+
+      <div class="div-3">
+        <h5>Don't Know Their Name?</h5>
+        <p class="boxText">Enter the characteristics of the person you want to search for.</p>
+        <div class="one">
+          <div>
+            <label for="age">Age</label> <input id="age" name="age" type="text" placeholder="ex: 25">
+          </div>
+          <div>
+            <label for="ageRange">Age Range</label> <input id="ageRange" name="ageRange" type="text" placeholder="ex: 25-30">
+          </div>
+          <div>
+            <label for="height">Height</label> <input id="height" name="height" type="text" placeholder='ex: 75"'>
+          </div>
+        </div>
+
+        <div class="two">
+          <div>
+            <label for="weight">Weight</label> <input id="weight" name="weight" type="text" placeholder="ex: 195">
+          </div>
+          <div>
+            <label for="occupation">Occupation</label> <input id="occupation" name="occupation" type="text" placeholder="ex: teacher">
+          </div>
+            <div>
+              <label for="eyeColor">Eye Color</label> <input id="eyeColor" name="eyeColor" type="text" placeholder="ex: blue">
             </div>
         </div>
 
-        <div class="div-3">
-            <div class="div">
-                <h5>Find a Person's Descendants</h5>
-                <p class="boxText">Please type the first and last name of the person whose descendants you are looking for.</p>
-                <div>
-                    <label for="firstName">First Name</label> <input id="firstName2" name="firstName" type="text" placeholder="ex: Billy">
-                </div>
-                <div>
-                    <label for="lastName">Last Name</label> <input id="lastName2" name="firstName" type="text" placeholder="ex: Bob">
-                </div>
-                <div>
-                    <button class="button" onclick="printListToPage(printNamesOf(getDescendantsRecursively(getInformation(getFirstNameParam('firstName2'), getLastNameParam('lastName2')), dataObject)), 'targetInfo2')" type="button">Search</button>
-                </div>
-                <div class="results" id="targetInfo2"></div>
-            </div>
+        <div class="three">
+          <button class="button" onclick="getInformation()" type="button">Search</button>
+          <div class="results" id="targetInfo"></div>
         </div>
-
-        <div class="div-3">
-            <div class="div">
-                <h5>Find a Person's Immediate Family</h5>
-                <p class="boxText">Please type the first and last name of the person you are looking for.</p>
-                <div>
-                    <label for="firstName">First Name</label> <input id="firstName3" name="firstName" type="text" placeholder="ex: Billy">
-                </div>
-                <div>
-                    <label for="lastName">Last Name</label> <input id="lastName3" name="firstName" type="text" placeholder="ex: Bob">
-                </div>
-                <div>
-                    <button class="button" onclick="printListToPage(markup(getInformation(getFirstNameParam(), getLastNameParam())), 'targetInfo1')" type="button">Search</button>
-                </div>
-                <div class="results" id="targetInfo3"></div>
-            </div>
-        </div>
-
-        <div class="div-3">
-            <div class="div">
-                <h5>Find a Person's Next of Kin</h5>
-                <p class="boxText">Please type the first and last name of the person you are looking for.</p>
-                <div>
-                    <label for="firstName">First Name</label> <input id="firstName4" name="firstName" type="text" placeholder="ex: Billy">
-                </div>
-                <div>
-                    <label for="lastName">Last Name</label> <input id="lastName4" name="firstName" type="text" placeholder="ex: Bob">
-                </div>
-                <div>
-                    <button class="button" onclick="printListToPage(markup(getNextOfKin(getInformation(getFirstNameParam('firstName4'), getLastNameParam('lastName4')))), 'targetInfo4')" type="button">Search</button>
-                </div>
-                <div class="results" id="targetInfo4"></div>
-            </div>
-        </div>
-
-        <div class="div-3">
-            <h5>Don't Know Their Name?</h5>
-            <p class="boxText">Enter the characteristics of the person you want to search for.</p>
-            <div class="one">
-                <div>
-                    <label for="age">Age</label> <input id="age" name="age" type="text" placeholder="ex: 25">
-                </div>
-                <div>
-                    <label for="ageRange">Age Range</label> <input id="ageRange" name="ageRange" type="text" placeholder="ex: 25-30">
-                </div>
-                <div>
-                    <label for="height">Height</label> <input id="height" name="height" type="text" placeholder='ex: 75"'>
-                </div>
-            </div>
-
-            <div class="two">
-                <div>
-                    <label for="weight">Weight</label> <input id="weight" name="weight" type="text" placeholder="ex: 195">
-                </div>
-                <div>
-                    <label for="occupation">Occupation</label> <input id="occupation" name="occupation" type="text" placeholder="ex: teacher">
-                </div>
-                <div>
-                    <label for="eyeColor">Eye Color</label> <input id="eyeColor" name="eyeColor" type="text" placeholder="ex: blue">
-                </div>
-            </div>
-
-            <div class="three">
-                <button class="button" onclick="getInformation()" type="button">Search</button>
-            </div class="three">
-
-            <div class="results" id="targetInfo"></div>
-        </div>
-    </div>
-
-    <div class="container"></div>
+      </div>
+  </div>
 
     <footer class="page-footer teal">
-        <div class="container"></div>
-        <div class="footer-copyright">
-            <div class="container">
-                Made by <a class="brown-text text-lighten-3" href=
-                "http://materializecss.com">Materialize</a>
-            </div>
+      <div class="container"></div>
+      <div class="footer-copyright">
+        <div class="container">
+          Made by <a class="brown-text text-lighten-3" href=
+          "http://materializecss.com">Materialize</a>
         </div>
+      </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
-    <script src="app.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+<script src="app.js" type="text/javascript"></script>
 </body>
 </html>
